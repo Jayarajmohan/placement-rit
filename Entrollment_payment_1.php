@@ -45,7 +45,7 @@
                         <div class="flex-item">
                             <div class="flex-item-inner">
                                 <!-- card -->
-                                <a href="admin_registration.php">
+                                <a href="#">
                                     <div class="card-front bg-violet">
                                     <i class="fa-solid fa-user-graduate"></i>
                                         <h4>Student Registration</h4>
@@ -60,7 +60,7 @@
                         <div class="flex-item">
                             <div class="flex-item-inner">
                                 <!-- card -->
-                                <a href="#">
+                                <a href="admin_registration.html">
                                     <div class="card-front bg-magenta">
                                     <i class="fa-solid fa-user-gear"></i>
                                         <h4>Admin Registration</h4>
@@ -76,7 +76,7 @@
                         <div class="flex-item">
                             <div class="flex-item-inner">
                                 <!-- card -->
-                                <a href="#">
+                                <a href="faculty_registration.html">
                                     <div class="card-front bg-blue">
                                     <i class="fa-solid fa-chalkboard-user"></i>
                                         <h4>Faculty registration</h4>

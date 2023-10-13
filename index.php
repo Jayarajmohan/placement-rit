@@ -62,7 +62,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center flex-lg-row align-items-center gap-3">
-            <a href="#login" class="text-white text-decoration-none px-3 py-1 bg-primary rounded-2">Login</a>
+            <a href="login.php" class="text-white text-decoration-none px-3 py-1 bg-primary rounded-2">Login</a>
           </div>
         </div>
       </div>

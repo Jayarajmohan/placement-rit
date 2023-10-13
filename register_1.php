@@ -22,23 +22,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Invalid Password");
     }
 
+    
+
     // Store User Data in Database (assuming you have a MySQL database set up)
-    // Prepare the statement
-    $stmt = $conn->prepare("INSERT INTO login (username, email, password, type) VALUES (?, ?, ?, 0)");
+  // Prepare the statement
+$stmt = $conn->prepare("INSERT INTO login (username, email, password,type) VALUES (?, ?, ?, 1)");
 
-    // Bind parameters and execute
-    $stmt->bind_param("sss", $username, $email, $password);
-    $stmt->execute();
+// Bind parameters and execute
+$stmt->bind_param("sss", $username, $email, $hashedPassword);
+$hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+$stmt->execute();
 
-    // Check for success
-    if ($stmt->affected_rows === 1) {
-        echo "Registration successful!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+// Check for success
+if ($stmt->affected_rows === 1) {
+    echo "Registration successful!.";
+} else {
+    echo "Error: " . $stmt->error;
+}
 
-    // Close the statement and connection
-    $stmt->close();
-    $conn->close();
+// Close the statement and connection
+$stmt->close();
+$conn->close();
+
 }
 ?>
