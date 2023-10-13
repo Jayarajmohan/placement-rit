@@ -42,7 +42,53 @@
             </ul>
         </nav>
         <main>
+        
+     
             
+            <div class="card-category-1">
+                
+                <div class="basic-card basic-card-aqua">
+                    <div class="card-content">
+                        <span class="card-title">Aptitude</span>
+                        <p class="card-text">
+                            Aptitude
+                        </p>
+                    </div>
+    
+                    <div class="card-link">
+                        <a href="aptitude-exam.php" title="Read Full"><span>Read Full</span></a>
+                    </div>
+                </div>
+    
+                <div class="basic-card basic-card-lips">
+                    <div class="card-content">
+                        <span class="card-title">Coding</span>
+                        <p class="card-text">
+                            Coding
+                        </p>
+                    </div>
+    
+                    <div class="card-link">
+                        <a href="#" title="Read Full"><span>Read Full</span></a>
+                    </div>
+                </div>
+    
+                
+                <div class="basic-card basic-card-dark">
+                    <div class="card-content">
+                        <span class="card-title">English</span>
+                        <p class="card-text">
+                        English
+                        </p>
+                    </div>
+    
+                    <div class="card-link">
+                        <a href="#" title="Read Full"><span>Read Full</span></a>
+                    </div>
+                </div>
+                
+            </div>
+
         </main>
     </div>
 </body>

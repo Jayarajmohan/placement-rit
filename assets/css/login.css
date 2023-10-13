@@ -62,6 +62,25 @@ body {
   button:hover {
     background-color: #70c1ff;
   }
+  .back-button {
+  float: right;
+  text-decoration: none;
+  padding: 10px 20px;
+  background: linear-gradient(to bottom right, #70c1ff, #498ffc);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.back-button:hover {
+  background: linear-gradient(to bottom right, #498ffc, #70c1ff);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
   
   @media (max-width: 480px) {
     .card {
@@ -70,3 +89,4 @@ body {
     }
   }
   
+  /* Add this to your existing CSS */

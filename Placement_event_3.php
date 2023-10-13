@@ -42,7 +42,48 @@
             </ul>
         </nav>
         <main>
+        <div class="container">
+                <div class="section">
+                    <div class="blog-post blog-single-post">
+                        <div class="single-post-title">
+                            <h2>Upcoming CGPA Sessions</h2>
+                        </div>
+                        <div class="single-post-content">
+                            <table class="events-list">
+                                <?php
+                               
+                                    include_once("./config/connection.php");
+                                // Fetch data from the database
+                                $query = "SELECT * FROM cgpa_events";
+                                $result = $conn->query($query);
+
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        $eventDate = date("d M", strtotime($row['event_date']));
+                                        $eventName = $row['event_name'];
+                                        $eventDetails = $row['event_details'];
+                                        $eventLink = $row['event_link'];
             
+                                        echo '<tr>
+                                                <td>
+                                                    <div class="event-date">
+                                                        <div class="event-day">' . $eventDate . '</div>
+                                                    </div>
+                                                </td>
+                                                <td class="event-venue hidden-xs"><i class="icon-map-marker"></i>' . $eventName . '</td>
+                                                <td class="event-price hidden-xs">' . $eventDetails . '</td>
+                                                <td><a href="' . $eventLink . '" class="btn btn-grey btn-sm event-more">Events Link</a></td>
+                                            </tr>';
+                                    }
+                                }
+            
+                                $conn->close();
+                                ?>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>

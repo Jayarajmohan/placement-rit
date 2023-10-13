@@ -46,12 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/login.css?v=<?php echo time(); ?>">
     <title>Login Page</title>
 </head>
 <body>
     <div class="container">
         <div class="card">
+          <a href="index.php" class="back-button">Back</a>
             <h2>Login Form</h2>
             <form action="" method="post">
                 <label for="username">Username</label>

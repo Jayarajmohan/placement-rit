@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#question-container, #result-container {
+    display: none;
+}
+
+#question-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#result-container {
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
