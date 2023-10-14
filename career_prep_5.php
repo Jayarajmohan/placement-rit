@@ -42,8 +42,43 @@
             </ul>
         </nav>
         <main>
-            
+        <div class="list-items-1">
+  <div class="one-three">
+    <h6 class="material-head">UseFull Links</h6>
+    <ul class="scrollable-list">
+      <?php
+      // Assuming you have a database connection established
+     include_once("./config/connection.php");
+
+      
+
+      // Query to retrieve the file_name and file_id from the "materials" table
+      $query = "SELECT link_id, link_name, link FROM links";
+      $result = mysqli_query($conn, $query);
+
+      if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+          $linkId = $row['link_id'];
+          $linkName = $row['link_name'];
+          $link = $row['link'];
+
+          echo '<li><a href="' . $link . '" download target="_blank">' . $linkName . '</a></li>';
+        }
+      } else {
+        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+      }
+
+      mysqli_close($conn);
+      ?>
+    </ul>
+  </div>
+</div>
+
         </main>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+                jQuery(".list-items-1 a").append('<span class="list-icon"><i class="fa-solid fa-link"></i></span>');
+        </script>
 </body>
 </html>

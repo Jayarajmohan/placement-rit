@@ -51,38 +51,40 @@
                         </ul>
                 </nav>
                 <main>
-                        <div class="list-items-1">
-                                <div class="one-three">
-                                        <h6 class="material-head">Study Materials</h6>
-                                        <ul class="scrollable-list">
-                                                <?php
-                                                // Assuming you have a database connection established
-                                                include_once("./config/connection.php");
-                                                // Query to retrieve the file_name and file_id from the "materials" table
-                                                $query = "SELECT file_id, file_name, file_location FROM materials";
-                                                $result = mysqli_query($conn, $query);
+                <div class="list-items-1">
+  <div class="one-three">
+    <h6 class="material-head">Study Materials</h6>
+    <ul class="scrollable-list">
+      <?php
+      // Assuming you have a database connection established
+     include_once("./config/connection.php");
 
-                                                // Loop through the database results to create download links
-                                                while ($row = mysqli_fetch_assoc($result)) {
-                                                        $fileId = $row['file_id'];
-                                                        $fileName = $row['file_name'];
-                                                        $fileLocation = $row['file_location'];
+      
 
-                                                        // Send the appropriate headers for file download
-                                                        header('Content-Type: application/octet-stream');
-                                                        header('Content-Disposition: attachment; filename="' . $fileName . '"');
-                                                        header('Content-Length: ' . filesize($fileLocation));
+      // Query to retrieve the file_name and file_id from the "materials" table
+      $query = "SELECT file_id, file_name,file_location FROM materials";
+      $result = mysqli_query($conn, $query);
 
-                                                        // Output the file contents
-                                                        readfile($fileLocation);
-                                                }
+      if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+          $fileId = $row['file_id'];
+          $fileName = $row['file_name'];
+          $location = $row['file_location'];
+          $fileLocation = "admin/" . $location;
 
-                                                // Close the database connection
-                                                mysqli_close($conn);
-                                                ?>
-                                        </ul>
-                                </div>
-                        </div>
+          echo '<li><a href="' . $fileLocation . '" download target="_blank">' . $fileName . '</a></li>';
+        }
+      } else {
+        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+      }
+
+      mysqli_close($conn);
+      ?>
+    </ul>
+  </div>
+</div>
+
+
 
 
 
@@ -90,7 +92,7 @@
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script>
-                jQuery(".list-items-1 a").append('<span class="list-icon"><i class="fa-solid fa-arrow-down"></i></span>');
+                jQuery(".list-items-1 a").append('<span class="list-icon"><i class="fa-solid fa-download"></i></span>');
         </script>
 </body>
 

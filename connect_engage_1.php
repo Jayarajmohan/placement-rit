@@ -75,7 +75,7 @@ $result = $conn->query($sql);
                 $caption = $row["caption"];
         ?>
                 <figure>
-                    <img src="./assets/slider/<?php echo $imageURL; ?>" alt="" />
+                    <img src="./admin/images/<?php echo $imageURL; ?>" alt="" />
                     <figcaption><?php echo $caption; ?></figcaption>
                 </figure>
         <?php
