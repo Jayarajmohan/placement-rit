@@ -1,73 +1,90 @@
 <?php
-// Start a session
-session_start();
-
-// Database connection settings
+// Replace with your database connection code
 include_once("./config/connection.php");
 
-// Check if questions and answers are already set in the session
-if (!isset($_SESSION['questions']) || !isset($_SESSION['correct_answers'])) {
-    // Fetch 5 random questions and answers from the database
-    $sql = "SELECT * FROM aptitude ORDER BY RAND() LIMIT 5";
-    $result = $conn->query($sql);
+// Query to retrieve questions from the database
+$sql = "SELECT * FROM aptitude ORDER BY RAND() LIMIT 5";
+$result = $conn->query($sql);
 
-    $questions = [];
-    $correct_answers = [];
-
+if ($result->num_rows > 0) {
+    $questions = array();
     while ($row = $result->fetch_assoc()) {
         $questions[] = $row;
-        $correct_answers[] = $row['correct_answer'];
     }
-
-    // Store questions and correct answers in session variables
-    $_SESSION['questions'] = $questions;
-    $_SESSION['correct_answers'] = $correct_answers;
+} else {
+    echo "No questions found in the database.";
 }
 
-// Check if the form has been submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_answers = [];
-
-    for ($i = 1; $i <= 5; $i++) {
-        $user_answers[] = $_POST["q$i"];
-    }
-
-    $correct_answers = $_SESSION['correct_answers'];
-
-    $score = 0;
-
-    for ($i = 0; $i < 5; $i++) {
-        if ($user_answers[$i] === $correct_answers[$i]) {
-            $score++;
-        }
-    }
-}
+// Close the database connection
+$conn->close();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MCQ Online Exam</title>
+    <title>Aptitude Test</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body>
-    <h1>MCQ Online Exam</h1>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <?php
-        if (!isset($score)) {
-            $question_number = 1;
-            foreach ($_SESSION['questions'] as $question) {
-                echo "<p>{$question_number}. {$question['question_text']}</p>";
-                echo "<input type='radio' name='q{$question_number}' value='A'> A. {$question['option_a']}<br>";
-                echo "<input type='radio' name='q{$question_number}' value='B'> B. {$question['option_b']}<br>";
-                echo "<input type='radio' name='q{$question_number}' value='C'> C. {$question['option_c']}<br>";
-                echo "<input type='radio' name='q{$question_number}' value='D'> D. {$question['option_d']}<br><br>";
-                $question_number++;
-            }
-            echo "<input type='submit' value='Submit'>";
-        } else {
-            echo "You got $score out of 5 questions correct.";
+<style>
+        /* Customize the color theme */
+        body {
+            background-color: #f0f0f0;
         }
-        ?>
-    </form>
+        .card {
+            background-color: #ffffff;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        .btn-primary {
+            background-color: #007BFF;
+            border-color: #007BFF;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+<body>
+<a href="career_prep_1.php" class="btn btn-secondary float-right">
+                            <i class="fa fa-arrow-left"></i> Back
+                        </a>
+    <div class="container">
+        <h1>Aptitude Test</h1>
+        <form method="post" action="evaluate.php">
+            <?php
+            foreach ($questions as $question) {
+                $question_id = $question['question_id'];
+                $question_text = $question['question_text'];
+                $option_a = $question['option_a'];
+                $option_b = $question['option_b'];
+                $option_c = $question['option_c'];
+                $option_d = $question['option_d'];
+
+                echo '<div class="card">';
+                echo '<div class="card-body">';
+                echo '<h5 class="card-title">' . $question_text . '</h5>';
+                echo '<div class="form-check">';
+                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="A" required>';
+                echo '<label class="form-check-label">' . $option_a . '</label>';
+                echo '</div>';
+                echo '<div class="form-check">';
+                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="B" required>';
+                echo '<label class="form-check-label">' . $option_b . '</label>';
+                echo '</div>';
+                echo '<div class="form-check">';
+                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="C" required>';
+                echo '<label class="form-check-label">' . $option_c . '</label>';
+                echo '</div>';
+                echo '<div class="form-check">';
+                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="D" required>';
+                echo '<label class="form-check-label">' . $option_d . '</label>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
+            <button type="submit" class="btn btn-primary">Submit Answers</button>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,34 +1,40 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Database connection settings
-   
-    include_once("./config/connection.php");
 
-    $correct_answers = 0;
+include_once("./config/connection.php");
 
-    // Fetch user answers from POST data
-    $user_answers = [];
-    for ($i = 1; $i <= 5; $i++) {
-        $user_answers[$i] = $_POST["q$i"];
-    }
+$score = 0;
 
-    // Fetch correct answers from the database
-    $sql = "SELECT question_id, correct_answer FROM aptitude";
-    $result = $conn->query($sql);
-
-    // Compare user's answers to correct answers
-    while ($row = $result->fetch_assoc()) {
-        $question_id = $row['question_id'];
-        $correct_answer = $row['correct_answer'];
-
-        if (isset($user_answers[$question_id]) && $user_answers[$question_id] == $correct_answer) {
-            $correct_answers++;
+foreach ($_POST as $key => $value) {
+    if (strpos($key, 'question_') === 0) {
+        $question_id = substr($key, strlen('question_'));
+        // Fetch the correct answer from the database
+        $sql = "SELECT correct_answer FROM aptitude WHERE question_id = $question_id";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $correct_answer = $row['correct_answer'];
+            if ($value === $correct_answer) {
+                $score++;
+            }
         }
     }
-
-    // Close the database connection
-    $conn->close();
-
-    echo "You got $correct_answers out of 5 questions correct.";
 }
+
+// Close the database connection
+$conn->close();
+
+// Display the result
+echo "<!DOCTYPE html>";
+echo "<html>";
+echo "<head>";
+echo "<title>Test Result</title>";
+echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+echo "</head>";
+echo "<body>";
+echo "<div class='container'>";
+echo "<h2>Your Score</h2>";
+echo "<p>You answered " . $score . " questions correctly out of " . count($_POST) . ".</p>";
+echo "</div>";
+echo "</body>";
+echo "</html>";
 ?>

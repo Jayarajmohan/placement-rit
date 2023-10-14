@@ -83,7 +83,7 @@
                     </div>
     
                     <div class="card-link">
-                        <a href="#" title="Read Full"><span>Read Full</span></a>
+                        <a href="english-exam.php" title="Read Full"><span>Read Full</span></a>
                     </div>
                 </div>
                 
