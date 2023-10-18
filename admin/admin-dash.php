@@ -43,9 +43,13 @@ if (!isset($_SESSION['log_id'])) {
                         <i class="fa-solid fa-book-open"></i>
                         <span class="nav-item">ADD Study Meterials</span>
                     </a></li>
-                <li><a href="#Events" class="nav-links">
+                <li><a href="#placementEvents" class="nav-links">
                         <i class="fa-solid fa-link"></i>
-                        <span class="nav-item">ADD Events</span>
+                        <span class="nav-item">ADD Placement Events</span>
+                    </a></li>
+                    <li><a href="#cgpaEvents" class="nav-links">
+                        <i class="fa-solid fa-link"></i>
+                        <span class="nav-item">ADD CGPA Events</span>
                     </a></li>
                 <li><a href="#Queries" class="nav-links">
                         <i class="fa-solid fa-link"></i>
@@ -110,7 +114,6 @@ if (!isset($_SESSION['log_id'])) {
                     <input type="submit" value="Upload Link" name="submit">
                 </form>
             </div>
-            </div>
             <div class="gallery" id="#Meterials">
             <form action="add-meterials.php" method="post" enctype="multipart/form-data">
                     <label for="files">Select file to upload:</label>
@@ -121,62 +124,45 @@ if (!isset($_SESSION['log_id'])) {
                     <input type="submit" value="Upload file" name="submit">
                 </form>
             </div>
-            </div>
-            <div class="gallery" id="#Events">
-            <form action="image-add.php" method="post" enctype="multipart/form-data">
-                    <label for="image">Select image to upload:</label>
-                    <div>
-                        <img id="img" src="choose.png" alt="" height="200" style="border-radius:10px;">
-                    </div>
-                    <input type="file" name="image" id="image">
-                    <label for="text">About the image :</label>
-                    <input type="text" name="about" id="about">
+            <div class="gallery" id="#placementEvents">
+            <form action="add-events.php" method="post" enctype="multipart/form-data">
+                    <label for="text">Add Placement events</label>
+                    <label for="name">Company Name:</label>
+			        <input type="text" id="name" name="name" required>
+			        <label for="description">Description :</label>
+			        <textarea type="text" name="description" id="description" required></textarea>
+                    <label for="start">Date:</label>
+			        <input type="date" id="from" name="date" required>
+                    <label for="link">Link:</label>
+			        <input type="link" id="from" name="link" required>
                     <br><br>
-                    <input type="submit" value="Upload Image" name="submit">
+                    <input type="submit" value="Add Event" name="submit">
                 </form>
             </div>
+            <div class="gallery" id="#cgpaEvents">
+            <form action="add-cgpaevents.php" method="post" enctype="multipart/form-data">
+            <label for="text">Add CGPA events</label>
+                    <label for="name">Event Name:</label>
+			        <input type="text" id="name" name="name" required>
+			        <label for="description">Description :</label>
+			        <textarea type="text" name="description" id="description" required></textarea>
+                    <label for="start">Date:</label>
+			        <input type="date" id="from" name="date" required>
+                    <label for="link">Link:</label>
+			        <input type="link" id="from" name="link" required>
+                    <br><br>
+                    <input type="submit" value="Add Event" name="submit">
+                </form>
             </div>
             <div class="gallery" id="#Queries">
-            <form action="image-add.php" method="post" enctype="multipart/form-data">
-                    <label for="image">Select image to upload:</label>
-                    <div>
-                        <img id="img" src="choose.png" alt="" height="200" style="border-radius:10px;">
-                    </div>
-                    <input type="file" name="image" id="image">
-                    <label for="text">About the image :</label>
-                    <input type="text" name="about" id="about">
-                    <br><br>
-                    <input type="submit" value="Upload Image" name="submit">
-                </form>
-            </div>
+                <?php
+                include_once("./view-queries.php");
+                ?>
             </div>
             <div class="gallery" id="#Feedbacks">
-            <form action="image-add.php" method="post" enctype="multipart/form-data">
-                    <label for="image">Select image to upload:</label>
-                    <div>
-                        <img id="img" src="choose.png" alt="" height="200" style="border-radius:10px;">
-                    </div>
-                    <input type="file" name="image" id="image">
-                    <label for="text">About the image :</label>
-                    <input type="text" name="about" id="about">
-                    <br><br>
-                    <input type="submit" value="Upload Image" name="submit">
-                </form>
-            </div>
-            </div>
-            <div class="gallery" id="#Links">
-            <form action="image-add.php" method="post" enctype="multipart/form-data">
-                    <label for="image">Select image to upload:</label>
-                    <div>
-                        <img id="img" src="choose.png" alt="" height="200" style="border-radius:10px;">
-                    </div>
-                    <input type="file" name="image" id="image">
-                    <label for="text">About the image :</label>
-                    <input type="text" name="about" id="about">
-                    <br><br>
-                    <input type="submit" value="Upload Image" name="submit">
-                </form>
-            </div>
+            <?php
+                include_once("./view-feedbacks.php");
+                ?>
             </div>
         </main>
     </div>
