@@ -98,7 +98,7 @@
         <div class="row card-group">
           <div class="col-md-4">
             <div class="card custom-card border-0">
-              <img src="./assets/images/dummy-man.png" class="card-img-top" alt="...">
+              <img src="./assets/images/Ebin-photo.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Prof.Ebin M Manuel</h5>
                 <p class="card-text">Placement Officer</p>
