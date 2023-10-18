@@ -46,6 +46,42 @@ echo "<html>";
 echo "<head>";
 echo "<title>Test Result</title>";
 echo "<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>";
+echo "<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    h2 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+    }
+    h3 {
+        color: Blue; /* Set the color for wrong answers */
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+    li.correct {
+        background-color: #c9e2c3; /* Set the background color for correct answers */
+    }
+    .your-correct-answer {
+        color: #4CBB17; 
+    }
+    .your-wrong-answer {
+        color: red; 
+    }
+</style>";
 echo "</head>";
 echo "<body>";
 echo "<div class='container'>";
@@ -63,7 +99,7 @@ if (!empty($wronglyAnsweredQuestions)) {
         echo "Option B: " . $questionData['option_b'] . "<br>";
         echo "Option C: " . $questionData['option_c'] . "<br>";
         echo "Option D: " . $questionData['option_d'] . "<br>";
-        echo "Your Answer: " . $questionData['user_answer'] . "<br>";
+        echo "<span ". ($questionData['user_answer'] === $questionData['correct_answer'] ? " class='your-correct-answer'" : "class='your-wrong-answer'") ."> Your Answer: " . $questionData['user_answer'] . "</span><br>";
         echo "Correct Answer: " . $questionData['correct_answer'] . "<br>";
         echo "</li>";
     }
@@ -73,4 +109,5 @@ if (!empty($wronglyAnsweredQuestions)) {
 echo "</div>";
 echo "</body>";
 echo "</html>";
+
 ?>
