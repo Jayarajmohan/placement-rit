@@ -20,7 +20,7 @@ if (!isset($_SESSION['log_id'])) {
         <a href="logout.php"><i class="fa fa-arrow-left back-button" aria-hidden="true"></i></a>
         <h5><a href="logout.php">
                 <i class="fa fa-th-large" aria-hidden="true"></i>
-                <span class="heading">Faculty Dashboard</span>
+                <span class="heading">Company Dashboard</span>
             </a></h5>
     </div>
     <hr style="height:2px;border-width:0;color:gray;background-color:gray">

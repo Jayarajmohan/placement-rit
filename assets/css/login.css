@@ -81,6 +81,62 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Add this CSS to style the switch */
+#switch-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#card-switch {
+  display: none;
+}
+
+/* Style the label as a sliding switch */
+#switch-container label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Style the slider (the moving part of the switch) */
+#switch-container label::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #498ffc;
+  transition: transform 0.3s ease-in-out;
+  left: 0;
+  top: 0;
+}
+
+/* Style the slider when the switch is in the 'on' state */
+#card-switch:checked + label::after {
+  transform: translateX(30px);
+}
+
+/* Style the switch label text */
+#switch-container label::before {
+  content: " ";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  color: #fff;
+  font-size: 14px;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Style the label text when the switch is in the 'on' state */
+#card-switch:checked + label::before {
+  color: #498ffc;
+}
+
   
   @media (max-width: 480px) {
     .card {

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <title>Login Page</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="card-1" class="card">
+            <a class="back-button" style="display: flex;float:left" id="switch-to-card-2">Student/Company</a>
+            <a href="index.php" class="back-button">Back</a>
+            <h2 style="margin-top: 70px;">Login Form</h2>
+            <form action="login-1.php" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username1" name="username" placeholder="Enter your username">
+                <label for="password">Password</label>
+                <input type="password" id="password1" name="password" placeholder="Enter your password">
+                <button type="submit" name="submit">Login</button>
+            </form>
+        </div>
+        <div id="card-2" class="card hidden">
+            <a class="back-button" style="display: flex;float:left" id="switch-to-card-1">Admin/Faculty</a>
+            <a href="index.php" class="back-button">Back</a>
+            <h2 style="margin-top: 70px;">Login Form-2</h2>
+            <form action="login-2.php" method="post">
+                <label for="username">Username</label>
+                <input type="text" id="username2" name="username" placeholder="Enter your username">
+                <label for="password">Password</label>
+                <input type="password" id="password2" name="password" placeholder="Enter your password">
+                <button type="submit" name="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const switchToCard1Button = document.getElementById('switch-to-card-1');
+        const switchToCard2Button = document.getElementById('switch-to-card-2');
+        const card1 = document.getElementById('card-1');
+        const card2 = document.getElementById('card-2');
+
+        switchToCard1Button.addEventListener('click', () => {
+            card1.classList.remove('hidden');
+            card2.classList.add('hidden');
+        });
+
+        switchToCard2Button.addEventListener('click', () => {
+            card1.classList.add('hidden');
+            card2.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

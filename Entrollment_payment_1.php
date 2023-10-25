@@ -92,7 +92,7 @@
                         <div class="flex-item">
                             <div class="flex-item-inner">
                                 <!-- card -->
-                                <a href="#">
+                                <a href="company-reg.html">
                                     <div class="card-front bg-green">
                                     <i class="fa-solid fa-building-user"></i>
                                         <h4>Company Registration</h4>

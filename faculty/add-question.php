@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 
     if ($stmt->execute()) {
         echo "<script> alert('Image uploaded successfully.');
-        window.location= 'admin-dash.php #Questions';
+        window.location= 'faculty-dash.php #Questions';
         </script>";
     } else {
         echo "Error: " . $stmt->error;

@@ -62,7 +62,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center flex-lg-row align-items-center gap-3">
-            <a href="login.php" class="text-white text-decoration-none px-3 py-1 bg-primary rounded-2">Login</a>
+            <a href="login.html" class="text-white text-decoration-none px-3 py-1 bg-primary rounded-2">Login</a>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@
           </div>
           <div class="col-md-4">
             <div class="card custom-card border-0">
-              <img src="./assets/images/dummy-man.png" class="card-img-top" alt="...">
+              <img src="./assets/images/rebeeh.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Rebeeh C V</h5>
                 <p class="card-text">Student Coordinator</p>
