@@ -69,7 +69,7 @@
                     </div>
     
                     <div class="card-link">
-                        <a href="#" title="Read Full"><span>Read Full</span></a>
+                        <a href="code-platform.html" title="Read Full"><span>Read Full</span></a>
                     </div>
                 </div>
     

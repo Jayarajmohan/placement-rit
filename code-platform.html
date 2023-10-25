@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Compiler</title>
+    <style>
+         body {
+            background-color: #f0f5ff; /* Light blue background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db; /* Dark blue header background */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1e6abf; /* Slightly darker blue on hover */
+        }
+
+        #output {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Code Compiler</h1>
+    <textarea id="code" rows="10" cols="50"></textarea>
+    <select id="language">
+        <option value="c">C</option>
+        <option value="cpp">C++</option>
+        <option value="java">Java</option>
+        <option value="python">Python</option>
+    </select>
+    <button id="compile">Compile/Run</button>
+    <div id="output"></div>
+
+    <script>
+        document.getElementById("compile").addEventListener("click", function () {
+            const code = document.getElementById("code").value;
+            const language = document.getElementById("language").value;
+            compileCode(code, language);
+        });
+
+        function compileCode(code, language) {
+            // Send an HTTP request to your PHP backend
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "compiler.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    document.getElementById("output").innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send("code=" + encodeURIComponent(code) + "&language=" + language);
+        }
+    </script>
+</body>
+</html>
