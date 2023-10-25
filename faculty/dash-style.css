@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Tilt+Neon&family=Tilt+Warp&display=swap');
+*{
+ margin: 0;
+ padding: 0;
+ outline: none;
+ text-decoration: none;
+ box-sizing: border-box;
+ font-family: "Poppins",sans-serif;
+}
+body{
+    background: #dfe9f5;
+}
+.sidebar{
+  float: left;
+}
+.top-bar {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a shadow for styling */
+}
+
+.back-button {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.heading {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #737373;
+    padding: 5px;
+}
+nav{
+    position: left;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    background: #fff;
+
+    width: 20%;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+main{
+  margin-top: 20px;
+  float: right;
+    width: 80%;
+    height:fit-content;
+    overflow-y: scroll;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+
+.list-items{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+nav a{
+    position: relative;
+    color: rgb(85, 83, 83);
+    font-size: 1rem;
+    font-weight: 800;
+    display: table;
+    width: 250px;
+    padding: 10px;
+}
+.nav-links{
+    margin-top: 5px;
+    margin-left: 5px;
+    
+}
+.nav-links .icons{
+    font-size: 1.5rem;
+}
+nav .bi{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.nav-item{
+    position: relative;
+}
+nav a:hover{
+    background: #eee;
+}
+.fa-th-large{
+    color: #005b96;
+    background-color: #ffffff;
+    font-size: 2rem;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+nav a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+.active{
+    background-color: #40a7ec;
+    margin-right: 10px;
+    border-radius: 10px 0px 0px 10px;
+    color: #04336c;
+}
+.gallery{
+  margin-top: 20px;
+}
+/*-------- global --------*/
+/*-------- flex container --------*/
+.flex-container {
+	display: flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -webkit-flex;
+	justify-content: space-around;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	-webkit-flex-flow: row wrap;
+	position: relative;
+}
+.flex-item {
+	color: #fff;
+	height: 210px;
+	margin: 10px 0;
+	padding: 0;
+	width: 225px;
+	position: relative;
+}
+.flex-item-inner {
+	display: flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: -webkit-flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	height: 210px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+.flex-item-inner a {
+	color: #fff;
+	cursor: pointer;
+}
+
+/*-------- cards --------*/
+
+  
+
+
+
+/* list style */
+
+.list-items-1 {
+  width: 90%;
+  margin: 10px;
+  background-color: #fff;
+  /*max-width: 1000px;*/
+  border-radius: 10px;
+  overflow: hidden;
+  /* padding: 10px 0 10px 20px; */
+}
+.list-items-1 .one-three {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  margin: 0 10px;
+}
+.list-items-1 .one-three:last-child {
+  margin-right: 0;
+}
+.list-items-1 ul {
+  padding: 5px 0;
+  margin: 0;
+  list-style: none;
+}
+.list-items-1 li {
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.list-items-1 a {
+  text-decoration: none;
+  line-height: 1.4;
+  font-family: Poppins,Helvetica,sans-serif;
+  padding: 10px;
+  display: block;
+  box-sizing: border-box;
+  transition: .6s ease-out; 
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  
+}
+.list-items-1 .one-three ul li:hover a {
+  text-decoration: none;
+  display: block;
+  background: #005b96;
+line-height: 1.4;
+  padding: 10px;
+  display: block;
+  box-sizing: border-box;
+  transition: .6s ease-out; 
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: block;
+  transform: scale(1.05);
+  transition: all .5s ease-in-out;
+
+}
+span.list-icon {
+  color: #005b96;
+  display: block;
+  float: right;
+  font-size: 12px;
+  font-weight: normal;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+.list-items-1 .one-three ul li:hover span.list-icon {
+  color: #fff;
+  display: block;
+  float: right;
+  font-size: 15px;
+  font-weight: normal;
+  margin-right: 4px;
+  margin-top: 3px;
+}
+
+@media all and (max-width: 912px) {
+  .list-items-1 .one-three {
+  width: 30%;
+  float: left;
+  overflow: hidden;
+  margin: 0 5px;
+}
+.list-items-1 a {
+  line-height: 1.4;
+  font-family: Poppins,Helvetica,sans-serif;
+  padding: 10px;
+  display: block;
+  box-sizing: border-box;
+  transition: .6s ease-out; 
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  }
+.list-items-1 .one-three ul li:hover a {
+  padding: 10px;
+  display: block;
+  box-sizing: border-box;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  
+  }
+  
+}
+@media all and (max-width: 768px) {
+  
+.list-items-1 .one-three {
+  width: 46%;
+  float: left;
+  overflow: hidden;
+  margin: 5px 10px;
+}
+  .list-items-1 .one-three ul li:hover a {
+  padding: 10px;
+  display: block;
+  box-sizing: border-box;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  
+  }
+
+}
+@media all and (max-width: 556px) {
+    .list-items-1 {
+  padding: 10px 10px 10px 10px;
+}
+ .list-items-1 .one-three {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  margin: 0 0;
+}
+    .list-items-1 .one-three ul li:hover a {
+  padding: 10px;
+  display: block;
+  box-sizing: border-box;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  
+  }
+
+}
+
+
+
+
+
+
+
+/* @media (max-width: 768px) {
+    .nav-items {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background: #333;
+        width: 100%;
+    }
+    .nav-items.active {
+        display: flex;
+    }
+    .menu-icon {
+        display: block;
+    }
+} */
+
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-top: 2em;
+      color: #064975;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px #999;
+}
+
+label, input[type="submit"] {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+  input[type="file"] {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+  input[type="text"] {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.select {
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+  background-color: #f5f5f5;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #064975;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #fff;
+  color: #064975;
+  border: 1px solid #064975;
+}
+  input[type="text"]::file-selector-button {
+  background-color: #064975;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+  input[type="text"]::file-selector-button:hover {
+  background-color: #fff;
+  color: #064975;
+  border: 1px solid #064975;
+}
+
+input[type="submit"] {
+  background-color: #064975;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #fff;
+  color: #064975;
+}

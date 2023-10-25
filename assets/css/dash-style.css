@@ -47,7 +47,7 @@ nav{
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
 main{
-    width: 80%;
+    width: 90%;
 }
 .list-items{
     margin-top: 10px;
@@ -509,20 +509,16 @@ nav a {
 .list-items-1 {
   width: 90%;
   margin: 10px;
-  background-color: #fff;
-  /*max-width: 1000px;*/
   border-radius: 10px;
+  display: flex;
+  flex-direction: row;
   overflow: hidden;
-  /* padding: 10px 0 10px 20px; */
 }
 .list-items-1 .one-three {
+  background-color: #fff;
   width: 100%;
-  float: left;
   overflow: hidden;
-  margin: 0 10px;
-}
-.list-items-1 .one-three:last-child {
-  margin-right: 0;
+  margin-left: 10px;
 }
 .list-items-1 ul {
   padding: 5px 0;
@@ -550,11 +546,9 @@ nav a {
 }
 .list-items-1 .one-three ul li:hover a {
   text-decoration: none;
-  display: block;
   background: #005b96;
 line-height: 1.4;
   padding: 10px;
-  display: block;
   box-sizing: border-box;
   transition: .6s ease-out; 
   font-weight: 500;
@@ -562,14 +556,12 @@ line-height: 1.4;
   margin-bottom: 5px;
   border-radius: 3px;
   box-sizing: border-box;
-  display: block;
   transform: scale(1.05);
   transition: all .5s ease-in-out;
 
 }
 span.list-icon {
   color: #005b96;
-  display: block;
   float: right;
   font-size: 12px;
   font-weight: normal;
@@ -578,7 +570,6 @@ span.list-icon {
 }
 .list-items-1 .one-three ul li:hover span.list-icon {
   color: #fff;
-  display: block;
   float: right;
   font-size: 15px;
   font-weight: normal;

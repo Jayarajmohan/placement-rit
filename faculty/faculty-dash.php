@@ -20,17 +20,13 @@ if (!isset($_SESSION['log_id'])) {
         <a href="logout.php"><i class="fa fa-arrow-left back-button" aria-hidden="true"></i></a>
         <h5><a href="logout.php">
                 <i class="fa fa-th-large" aria-hidden="true"></i>
-                <span class="heading">Admin Dashboard</span>
+                <span class="heading">Faculty Dashboard</span>
             </a></h5>
     </div>
     <hr style="height:2px;border-width:0;color:gray;background-color:gray">
     <div class="container">
         <nav class="sidebar">
             <ul class="list-items">
-                <li><a href="#gallery" class="nav-links active">
-                        <i class="fa-solid fa-highlighter"></i>
-                        <span class="nav-item">ADD Gallery </span>
-                    </a></li>
                 <li><a href="#Questions" class="nav-links">
                         <i class="fa-solid fa-video"></i>
                         <span class="nav-item">ADD Questions</span>
@@ -43,38 +39,9 @@ if (!isset($_SESSION['log_id'])) {
                         <i class="fa-solid fa-book-open"></i>
                         <span class="nav-item">ADD Study Meterials</span>
                     </a></li>
-                <li><a href="#placementEvents" class="nav-links">
-                        <i class="fa-solid fa-link"></i>
-                        <span class="nav-item">ADD Placement Events</span>
-                    </a></li>
-                    <li><a href="#cgpaEvents" class="nav-links">
-                        <i class="fa-solid fa-link"></i>
-                        <span class="nav-item">ADD CGPA Events</span>
-                    </a></li>
-                <li><a href="#Queries" class="nav-links">
-                        <i class="fa-solid fa-link"></i>
-                        <span class="nav-item">View Queries</span>
-                    </a></li>
-                <li><a href="#Feedbacks" class="nav-links">
-                        <i class="fa-solid fa-link"></i>
-                        <span class="nav-item">View Feedbacks</span>
-                    </a></li>
             </ul>
         </nav>
         <main>
-            <div class="gallery" id="#gallery">
-                <form action="image-add.php" method="post" enctype="multipart/form-data">
-                    <label for="image">Select image to upload:</label>
-                    <div>
-                        <img id="img" src="choose.png" alt="" height="200" style="border-radius:10px;">
-                    </div>
-                    <input type="file" name="image" id="image">
-                    <label for="text">About the image :</label>
-                    <input type="text" name="about" id="about">
-                    <br><br>
-                    <input type="submit" value="Upload Image" name="submit">
-                </form>
-            </div>
             <div class="gallery" id="#Questions">
             <form action="add-question.php" method="post" enctype="multipart/form-data">
                     <select name="table-name" id="" class="select">
@@ -110,13 +77,6 @@ if (!isset($_SESSION['log_id'])) {
                     <input type="text" name="link_name" id="image">
                     <label for="text">Link :</label>
                     <input type="text" name="about" id="about">
-                    <label for="text">Type :</label>
-                    <select name="type" id="" class="select">
-                        <option value="" selected>Select the Type</option>
-                        <option value="Aptitude">Aptitude</option>
-                        <option value="Coding">Coding</option>
-                        <option value="English">English</option>
-                    </select>
                     <br><br>
                     <input type="submit" value="Upload Link" name="submit">
                 </form>
@@ -127,55 +87,9 @@ if (!isset($_SESSION['log_id'])) {
                     <input type="file" name="file" id="file">
                     <label for="text">File name :</label>
                     <input type="text" name="file_name" id="about">
-                    <select name="type" id="" class="select">
-                        <option value="" selected>Select the Type</option>
-                        <option value="Aptitude">Aptitude</option>
-                        <option value="Coding">Coding</option>
-                        <option value="English">English</option>
-                    </select>
                     <br><br>
                     <input type="submit" value="Upload file" name="submit">
                 </form>
-            </div>
-            <div class="gallery" id="#placementEvents">
-            <form action="add-events.php" method="post" enctype="multipart/form-data">
-                    <label for="text">Add Placement events</label>
-                    <label for="name">Company Name:</label>
-			        <input type="text" id="name" name="name" required>
-			        <label for="description">Description :</label>
-			        <textarea type="text" name="description" id="description" required></textarea>
-                    <label for="start">Date:</label>
-			        <input type="date" id="from" name="date" required>
-                    <label for="link">Link:</label>
-			        <input type="link" id="from" name="link" required>
-                    <br><br>
-                    <input type="submit" value="Add Event" name="submit">
-                </form>
-            </div>
-            <div class="gallery" id="#cgpaEvents">
-            <form action="add-cgpaevents.php" method="post" enctype="multipart/form-data">
-            <label for="text">Add CGPA events</label>
-                    <label for="name">Event Name:</label>
-			        <input type="text" id="name" name="name" required>
-			        <label for="description">Description :</label>
-			        <textarea type="text" name="description" id="description" required></textarea>
-                    <label for="start">Date:</label>
-			        <input type="date" id="from" name="date" required>
-                    <label for="link">Link:</label>
-			        <input type="link" id="from" name="link" required>
-                    <br><br>
-                    <input type="submit" value="Add Event" name="submit">
-                </form>
-            </div>
-            <div class="gallery" id="#Queries">
-                <?php
-                include_once("./view-queries.php");
-                ?>
-            </div>
-            <div class="gallery" id="#Feedbacks">
-            <?php
-                include_once("./view-feedbacks.php");
-                ?>
             </div>
         </main>
     </div>

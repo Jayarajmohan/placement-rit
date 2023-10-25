@@ -27,6 +27,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 case 0:
                     header('Location: admin/admin-dash.php');
                     exit;
+                case 1:
+                    header('Location: faculty/faculty-dash.php');
+                    exit;
                 default:
                     echo "<script>alert('Login successful!');</script>";
             }

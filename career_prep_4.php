@@ -51,43 +51,96 @@
                         </ul>
                 </nav>
                 <main>
-                <div class="list-items-1">
-  <div class="one-three">
-    <h6 class="material-head">Study Materials</h6>
-    <ul class="scrollable-list">
-      <?php
-      // Assuming you have a database connection established
-     include_once("./config/connection.php");
-
-      
-
-      // Query to retrieve the file_name and file_id from the "materials" table
-      $query = "SELECT file_id, file_name,file_location FROM materials";
-      $result = mysqli_query($conn, $query);
-
-      if ($result) {
-        while ($row = mysqli_fetch_assoc($result)) {
-          $fileId = $row['file_id'];
-          $fileName = $row['file_name'];
-          $location = $row['file_location'];
-          $fileLocation = "admin/" . $location;
-
-          echo '<li><a href="' . $fileLocation . '" download target="_blank">' . $fileName . '</a></li>';
-        }
-      } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($conn);
-      }
-
-      mysqli_close($conn);
-      ?>
-    </ul>
-  </div>
-</div>
+                        <div class="list-items-1">
+                                <div class="one-three">
+                                        <h6 class="material-head">Study Materials - Aptitude</h6>
+                                        <ul class="scrollable-list">
+                                                <?php
+                                                // Assuming you have a database connection established
+                                                include_once("./config/connection.php");
 
 
 
+                                                // Query to retrieve the file_name and file_id from the "materials" table
+                                                $query = "SELECT file_id, file_name,file_location FROM materials WHERE type='Aptitude'";
+                                                $result = mysqli_query($conn, $query);
+
+                                                if ($result) {
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                                $fileId = $row['file_id'];
+                                                                $fileName = $row['file_name'];
+                                                                $location = $row['file_location'];
+                                                                $fileLocation = "admin/" . $location;
+
+                                                                echo '<li><a href="' . $fileLocation . '" download target="_blank">' . $fileName . '</a></li>';
+                                                        }
+                                                } else {
+                                                        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                                }
+
+                                                ?>
+                                        </ul>
+                                </div>
+                                <div class="one-three">
+                                        <h6 class="material-head">Study Materials - Coding</h6>
+                                        <ul class="scrollable-list">
+                                                <?php
+                                                // Assuming you have a database connection established
+                                                include_once("./config/connection.php");
 
 
+
+                                                // Query to retrieve the file_name and file_id from the "materials" table
+                                                $query = "SELECT file_id, file_name,file_location FROM materials WHERE type='Coding'";
+                                                $result = mysqli_query($conn, $query);
+
+                                                if ($result) {
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                                $fileId = $row['file_id'];
+                                                                $fileName = $row['file_name'];
+                                                                $location = $row['file_location'];
+                                                                $fileLocation = "admin/" . $location;
+
+                                                                echo '<li><a href="' . $fileLocation . '" download target="_blank">' . $fileName . '</a></li>';
+                                                        }
+                                                } else {
+                                                        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                                }
+
+                                                ?>
+                                        </ul>
+                                </div>
+                                <div class="one-three">
+                                        <h6 class="material-head">Study Materials - English</h6>
+                                        <ul class="scrollable-list">
+                                                <?php
+                                                // Assuming you have a database connection established
+                                                include_once("./config/connection.php");
+
+
+
+                                                // Query to retrieve the file_name and file_id from the "materials" table
+                                                $query = "SELECT file_id, file_name,file_location FROM materials WHERE type='English'";
+                                                $result = mysqli_query($conn, $query);
+
+                                                if ($result) {
+                                                        while ($row = mysqli_fetch_assoc($result)) {
+                                                                $fileId = $row['file_id'];
+                                                                $fileName = $row['file_name'];
+                                                                $location = $row['file_location'];
+                                                                $fileLocation = "admin/" . $location;
+
+                                                                echo '<li><a href="' . $fileLocation . '" download target="_blank">' . $fileName . '</a></li>';
+                                                        }
+                                                } else {
+                                                        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                                }
+
+                                                mysqli_close($conn);
+                                                ?>
+                                        </ul>
+                                </div>
+                        </div>
                 </main>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

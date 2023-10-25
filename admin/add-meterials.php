@@ -4,6 +4,7 @@ include_once("../config/connection.php");
 if (isset($_POST['submit'])) {
     // Get form data
     $file_name = $_POST['file_name'];
+    $type = $_POST['type'];
 
     // Check if a file was uploaded successfully
     if (isset($_FILES['file']) && $_FILES['file']['error'] === 0) {
@@ -22,8 +23,8 @@ if (isset($_POST['submit'])) {
             // Move the uploaded file to the desired directory
             if (move_uploaded_file($_FILES['file']['tmp_name'], $file_location)) {
                 // Use a prepared statement to insert file data into the database
-                $stmt = $conn->prepare("INSERT INTO materials (file_name, file_location) VALUES (?, ?)");
-                $stmt->bind_param("ss", $file_name, $file_location);
+                $stmt = $conn->prepare("INSERT INTO materials (file_name, file_location, type) VALUES (?, ?, ?)");
+                $stmt->bind_param("sss", $file_name, $file_location, $type);
 
                 if ($stmt->execute()) {
                     echo "<script> alert('file uploaded successfully.');

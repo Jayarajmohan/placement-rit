@@ -6,10 +6,11 @@ if (isset($_POST['submit'])) {
     // Get form data
     $link_name = $_POST['link_name'];
     $link = $_POST['about'];
+    $type = $_POST['type'];
 
     // Use a prepared statement to insert data into the database
-    $stmt = $conn->prepare("INSERT INTO links (link_name, link) VALUES (?, ?)");
-    $stmt->bind_param("ss", $link_name, $link);
+    $stmt = $conn->prepare("INSERT INTO links (link_name, link,type) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $link_name, $link, $type);
 
     if ($stmt->execute()) {
         echo "<script> alert('Link information inserted into the database successfully.');
