@@ -45,7 +45,7 @@
                         <div class="flex-item">
                             <div class="flex-item-inner">
                                 <!-- card -->
-                                <a href="#">
+                                <a href="student-reg.html">
                                     <div class="card-front bg-violet">
                                     <i class="fa-solid fa-user-graduate"></i>
                                         <h4>Student Registration</h4>
