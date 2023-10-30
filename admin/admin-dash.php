@@ -27,7 +27,11 @@ if (!isset($_SESSION['log_id'])) {
     <div class="container">
         <nav class="sidebar">
             <ul class="list-items">
-                <li><a href="#gallery" class="nav-links active">
+            <li><a href="#home" class="nav-links active">
+                        <i class="fa-solid fa-highlighter"></i>
+                        <span class="nav-item">HOME</span>
+                    </a></li>
+                <li><a href="#gallery" class="nav-links">
                         <i class="fa-solid fa-highlighter"></i>
                         <span class="nav-item">ADD Gallery </span>
                     </a></li>
@@ -62,6 +66,9 @@ if (!isset($_SESSION['log_id'])) {
             </ul>
         </nav>
         <main>
+        <div class="gallery" id="#home">
+                <?php include('user-info.php'); ?>
+            </div>
             <div class="gallery" id="#gallery">
                 <form action="image-add.php" method="post" enctype="multipart/form-data">
                     <label for="image">Select image to upload:</label>
@@ -206,7 +213,7 @@ if (!isset($_SESSION['log_id'])) {
 
         // Find the index of the 'gallery' link and set it as active
         const galleryIndex = Array.from(navLinks).findIndex((navLink) => {
-            return navLink.getAttribute('href') === '#gallery';
+            return navLink.getAttribute('href') === '#home';
         });
 
         // If the 'gallery' link is found, set it as active and show the gallery section
