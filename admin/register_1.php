@@ -7,10 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $unique_code = $_POST["unique_code"];
 
-    // Validate Unique Code
-    if ($unique_code !== "678797") {
-        die("Invalid Unique Code");
-    }
+
 
     // Validate Email Format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/@rit\.ac\.in$/', $email)) {

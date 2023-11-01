@@ -13,6 +13,15 @@ if (!isset($_SESSION['log_id'])) {
     <link rel="stylesheet" href="dash-style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <title></title>
+    <style>
+        .q-list{
+            display: block;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 20px;
+            color:blue;
+        }
+    </style>
 </head>
 
 <body>
@@ -62,6 +71,10 @@ if (!isset($_SESSION['log_id'])) {
                 <li><a href="#Feedbacks" class="nav-links">
                         <i class="fa-solid fa-link"></i>
                         <span class="nav-item">View Feedbacks</span>
+                    </a></li>
+                    <li><a href="#add-fac" class="nav-links">
+                        <i class="fa-solid fa-link"></i>
+                        <span class="nav-item">Add Faculty</span>
                     </a></li>
             </ul>
         </nav>
@@ -180,10 +193,26 @@ if (!isset($_SESSION['log_id'])) {
                 ?>
             </div>
             <div class="gallery" id="#Feedbacks">
+                <ul>
+                    <li class="q-list">Q1: Is there a section for alumni success stories or a forum for community interaction?</li>
+                    <li class="q-list">Q2: Is contact information for the placement cell easy to find?</li>
+                    <li class="q-list">Q3: Is there an easy way to submit resumes and applications through the website?</li>
+                    <li class="q-list">Q4: Is there relevant content, such as career advice, interview tips, and resume templates?</li>
+                    <li class="q-list">Q5: Is the website easy to navigate?</li>
+                    <li class="q-list">Q6: Is it clear how to apply for job listings?</li>
+                    <li class="q-list">Q7: Is there an easy way to submit?</li>
+                </ul>
             <?php
                 include_once("./view-feedbacks.php");
                 ?>
             </div>
+            <div class="gallery" id="#add-fac">
+                <?php 
+                include_once("faculty_registration.html");
+                ?>
+
+            </div>
+            
         </main>
     </div>
     <script>

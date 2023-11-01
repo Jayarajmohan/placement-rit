@@ -1,59 +1,33 @@
 <?php
-if (isset($_POST['submit'])) {
-    include_once("./config/connection.php");
+include_once("./config/connection.php");
 
-    // Define an array to store validation errors
-    $errors = [];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    
+    // Assuming your form data is boolean (yes/no) - 1 for Yes and 0 for No
+    $q1 = $_POST['Q1'];
+    $q2 = $_POST['Q2'];
+    $q3 = $_POST['Q3'];
+    $q4 = $_POST['Q4'];
+    $q5 = $_POST['Q5'];
+    $q6 = $_POST['Q6'];
+    $q7 = $_POST['Q7'];
 
-    // Retrieve and validate form data
-    $first_name = validateInput($_POST['fname'], 'First Name');
-    $last_name = validateInput($_POST['lname'], 'Last Name');
-    $phone = validateInput($_POST['phone'], 'Phone Number');
-    $email = validateInput($_POST['email'], 'Email');
-    $feedback = validateInput($_POST['yourfeedback'], 'Feedback');
+    // Prepare and bind the statement
+    $stmt = $conn->prepare("INSERT INTO feedback_questions (NAME, EMAIL, Q1, Q2, Q3, Q4, Q5, Q6, Q7, PHONE) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssiiiiiiis", $name, $email, $q1, $q2, $q3, $q4, $q5, $q6, $q7, $phone);
 
-    // Validate email format
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email format.";
-    }
-
-    // Check if there are any validation errors
-    if (count($errors) === 0) {
-        // Insert data into the feedbacks table
-        $sql = "INSERT INTO feedbacks (first_name, last_name, phone, email, feedback) VALUES (?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssss", $first_name, $last_name, $phone, $email, $feedback);
-
-        if ($stmt->execute()) {
-            $response = "Feedback submitted successfully!";
-        } else {
-            $response = "Error: " . $sql . "<br>" . $conn->error;
-        }
-
-        // Close the database connection
-        $stmt->close();
-        $conn->close();
+    // Execute the query
+    if ($stmt->execute()) {
+        echo "New record inserted successfully";
     } else {
-        $response = "Validation errors:<br>";
-        foreach ($errors as $error) {
-            $response .= $error . "<br>";
-        }
+        echo "Error: " . $conn->error;
     }
 
-    // Return a JavaScript response to display a pop-up message and redirect
-    echo "<script>alert('$response'); window.location.href = 'connect_engage_3.php';</script>";
+    $stmt->close();
 }
 
-function validateInput($input, $fieldName) {
-    $input = trim($input);
-    $input = stripslashes($input);
-    $input = htmlspecialchars($input);
-
-    // Validate that the input is not empty
-    if (empty($input)) {
-        $errors[] = $fieldName . " is required.";
-    }
-
-    return $input;
-}
+$conn->close();
 ?>

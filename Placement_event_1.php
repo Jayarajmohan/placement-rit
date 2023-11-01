@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/dash-style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title></title>
     <style>
         .card-conatiner {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
         }
 
         .card {
@@ -21,7 +20,6 @@
             padding: 20px;
             text-align: center;
             box-sizing: border-box;
-            flex: 1;
             margin: 5px;
         }
 
@@ -39,47 +37,74 @@
             font-size: 24px;
             color: #27ae60;
         }
+        /* Events style */
+
+.section {
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #ffffff;
+}
+
+.events-list {
+  width: 100%;
+  font-size: 0.9em;
+}
+
+.events-list tr td {
+  padding: 5px 20px 5px 0;
+}
+
+.events-list tr td:last-child {
+  padding: 5px 0;
+  text-align: right;
+}
+
+.events-list tr:hover .event-date {
+  border-left: 5px solid #4f8db3;
+}
+
+.events-list .event-date {
+  margin: 3px 0;
+  padding: 2px 10px;
+  border-left: 5px solid #CFCFCF;
+  -webkit-transition: all .25s linear;
+  -moz-transition: all .25s linear;
+  -o-transition: all .25s linear;
+  -ms-transition: all .25s linear;
+  transition: all .25s linear;
+}
+
+.events-list .event-date .event-day {
+  color: #004A5B;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: left;
+}
+
+.events-list .event-date .event-month {
+  color: #777;
+  font-size: 1em;
+  font-weight: 600;
+  text-align: left;
+}
+
+.events-list .event-date .event-venue,
+.events-list .event-date .event-price {
+  white-space: nowrap;
+}
     </style>
 
 
 </head>
 
 <body>
-    <div class="top-bar">
-        <a href="index.php"><i class="fa fa-arrow-left back-button" aria-hidden="true"></i></a>
-        <h5><a href="Entrollment_payment_1.php">
-                <i class="fa fa-th-large" aria-hidden="true"></i>
-                <span class="heading">Placement Event Planer</span>
-            </a></h5>
-    </div>
-    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-    <div class="container">
-        <nav>
-            <ul class="list-items">
-                <li><a href="Placement_event_1.php" class="nav-links active">
-                        <i class="fa-regular fa-calendar-check"></i>
-                        <span class="nav-item">Upcomming Recruitment</span>
-                    </a></li>
-                <li><a href="Placement_event_2.php" class="nav-links">
-                        <i class="fa-solid fa-people-group"></i>
-                        <span class="nav-item">Recruiters</span>
-                    </a></li>
-                <li><a href="Placement_event_3.php" class="nav-links">
-                        <i class="fa-regular fa-calendar-days"></i>
-                        <span class="nav-item">Upcomming CGPA Sessions</span>
-                    </a></li>
-                <li><a href="Placement_event_4.php" class="nav-links">
-                        <i class="fa-solid fa-suitcase"></i>
-                        <span class="nav-item">Internships</span>
-                    </a></li>
-                <li><a href="Placement_event_5.php" class="nav-links">
-                        <i class="fa-regular fa-clipboard"></i>
-                        <span class="nav-item">Placement Recoreds</span>
-                    </a></li>
-            </ul>
-        </nav>
-        <main>
-            <div class="cards-container">
+<?php include_once("header.php") ?>
+<div class="cards-container">
                 <?php
                 include_once("./config/connection.php");
 
@@ -156,6 +181,8 @@
                 }
                 ?>
             </div>
+
+            
             <div class="container">
                 <div class="section">
                     <div class="blog-post blog-single-post">
@@ -247,8 +274,7 @@
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
