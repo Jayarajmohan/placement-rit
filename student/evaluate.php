@@ -1,6 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['log_id'])) {
+    header('location:../login.php');
 
-include_once("./config/connection.php");
+}
+else{
+    include_once("../config/connection.php");
 
 $score = 0;
 $wronglyAnsweredQuestions = [];
@@ -109,5 +114,7 @@ if (!empty($wronglyAnsweredQuestions)) {
 echo "</div>";
 echo "</body>";
 echo "</html>";
+}
+
 
 ?>

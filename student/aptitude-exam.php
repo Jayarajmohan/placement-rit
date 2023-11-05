@@ -1,6 +1,12 @@
 <?php
-// Replace with your database connection code
-include_once("./config/connection.php");
+session_start();
+if (!isset($_SESSION['log_id'])) {
+    header('location:../login.php');
+
+}
+else{
+    // Replace with your database connection code
+include_once("../config/connection.php");
 
 // Query to retrieve questions from the database
 $sql = "SELECT * FROM aptitude ORDER BY RAND() LIMIT 5";
@@ -17,6 +23,8 @@ if ($result->num_rows > 0) {
 
 // Close the database connection
 $conn->close();
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +53,7 @@ $conn->close();
         }
     </style>
 <body>
-<a href="career_prep_1.php" class="btn btn-secondary float-right">
+<a href="student-dash.php" class="btn btn-secondary float-right">
                             <i class="fa fa-arrow-left"></i> Back
                         </a>
     <div class="container">
