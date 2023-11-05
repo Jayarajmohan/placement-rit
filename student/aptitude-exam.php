@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['log_id'])) {
-    header('location:../login.php');
+    header('location:../login.html');
 
 }
 else{
@@ -12,10 +12,13 @@ include_once("../config/connection.php");
 $sql = "SELECT * FROM aptitude ORDER BY RAND() LIMIT 5";
 $result = $conn->query($sql);
 
+
+
 if ($result->num_rows > 0) {
     $questions = array();
     while ($row = $result->fetch_assoc()) {
         $questions[] = $row;
+        $_SESSION["question"] = count($questions);
     }
 } else {
     echo "No questions found in the database.";
@@ -72,19 +75,19 @@ $conn->close();
                 echo '<div class="card-body">';
                 echo '<h5 class="card-title">' . $question_text . '</h5>';
                 echo '<div class="form-check">';
-                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="A" required>';
+                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="A">';
                 echo '<label class="form-check-label">' . $option_a . '</label>';
                 echo '</div>';
                 echo '<div class="form-check">';
-                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="B" required>';
+                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="B">';
                 echo '<label class="form-check-label">' . $option_b . '</label>';
                 echo '</div>';
                 echo '<div class="form-check">';
-                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="C" required>';
+                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="C">';
                 echo '<label class="form-check-label">' . $option_c . '</label>';
                 echo '</div>';
                 echo '<div class="form-check">';
-                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="D" required>';
+                echo '<input type="radio" class="form-check-input" name="question_' . $question_id . '" value="D">';
                 echo '<label class="form-check-label">' . $option_d . '</label>';
                 echo '</div>';
                 echo '</div>';

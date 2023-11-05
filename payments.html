@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,29 +10,75 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/payments.css">
     <title>Credit Card - Input Form</title>
-  </head>
-  <body>
+    <style>
+        .timer {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
     <div class="container">
-      <div class="header">
-        <div class="title"><h3>Paymenthub</h3></div>
-        <div class="button"><a class="back-button" href="index.php">Home</a></div>
-      </div>
-      <div class="form">
-        <img class="card-image" src="./assets/images/payment_QR.jpeg" alt="Card image">
-        <form action="payments.php" method="post">
-          <div class="flex-row">
-            <label for="card-number">Email</label>
-            <input name="email" class="card-number" type="text" value="">
-          </div>
-          <div class="flex-row">
-            <label for="card-number">Transaction Id</label>
-            <input name="transaction_id" class="card-number" type="text" value="">
-          </div>
-          <div class="flex-row">
-            <input class="card-submit" type="submit">
-          </div>
-        </form>
-      </div>
+        <div class="header">
+            <div class="title">
+                <h3>Paymenthub</h3>
+            </div>
+            <div class="button">
+                <a class="back-button" href="index.php">Home</a>
+            </div>
+        </div>
+        <div class="form">
+            <div>
+                <img class="card-image" src="./assets/images/payment_QR.jpeg" alt="Card image">
+                <div class="timer" id="timer">Time remaining: 1:52</div>
+            </div>
+            <form action="payments.php" method="post">
+                <div class="flex-row">
+                    <label for="card-number">Email</label>
+                    <input name="email" class="card-number" type="text" value="">
+                </div>
+                <div class="flex-row">
+                    <label for="card-number">Transaction Id</label>
+                    <input name="transaction_id" class="card-number" type="text" value="">
+                </div>
+                <div class="flex-row">
+                    <input class="card-submit" type="submit">
+                </div>
+            </form>
+        </div>
     </div>
-  </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const qrImage = document.querySelector('.card-image');
+            const timerDisplay = document.getElementById('timer');
+
+            let secondsRemaining = 112; // Initial countdown time in seconds
+
+            // Function to update and display the countdown timer
+            function updateTimer() {
+                const minutes = Math.floor(secondsRemaining / 60);
+                const seconds = secondsRemaining % 60;
+                timerDisplay.textContent = `Time remaining: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+
+            // Update and display the initial countdown timer
+            updateTimer();
+
+            // Update the timer every second
+            const countdown = setInterval(function () {
+                secondsRemaining--;
+                updateTimer();
+
+                // Hide the QR code image when the timer reaches zero
+                if (secondsRemaining <= 0) {
+                    clearInterval(countdown); // Stop the countdown
+                    qrImage.style.display = 'none';
+                    timerDisplay.style.display = 'none';
+                }
+            }, 1000); // Update every second (1000 milliseconds)
+        });
+    </script>
+</body>
+
 </html>

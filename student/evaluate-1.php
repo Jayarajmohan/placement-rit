@@ -89,6 +89,9 @@ echo "<style>
 </style>";
 echo "</head>";
 echo "<body>";
+echo "<a href='student-dash.php' class='btn btn-secondary float-right'>
+<i class='fas fa-arrow-left'></i> Back
+</a>";
 echo "<div class='container'>";
 echo "<h2>Your Score</h2>";
 echo "<p>You answered " . $score . " questions correctly out of " . count($_POST) . ".</p>";

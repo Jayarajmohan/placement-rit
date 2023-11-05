@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['log_id'])) {
-    header('location:../login.php');
+    header('location:../login.html');
 
 } else {
     include_once("../config/connection.php");
@@ -42,15 +42,15 @@ if (!isset($_SESSION['log_id'])) {
             <nav class="dashboard-nav-list">
                 <a href="#home" class="dashboard-nav-item"><i class="fas fa-home"></i>Home </a>
                 <div class='dashboard-nav-dropdown'>
-                        <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Profile</a>
                     <div class='dashboard-nav-dropdown-menu'>
-                        <a href="#" class="dashboard-nav-dropdown-item">Profile Registration</a>
+                        <a href="#register" class="dashboard-nav-dropdown-item">Profile Registration</a>
                         <a href="#" class="dashboard-nav-dropdown-item">Update Profile</a>
                     </div>
                 </div>
-                    <div class='dashboard-nav-dropdown'>
-                        <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Mock-Test</a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="aptitude-exam.php" class="dashboard-nav-dropdown-item">Aptitude</a>
@@ -59,16 +59,16 @@ if (!isset($_SESSION['log_id'])) {
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
-                        <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Live-Exam</a>
                     <div class='dashboard-nav-dropdown-menu'>
-                        <a href="#" class="dashboard-nav-dropdown-item">Aptitude</a>
+                        <a href="live-exam-intro.php" class="dashboard-nav-dropdown-item">Aptitude</a>
                         <a href="#" class="dashboard-nav-dropdown-item">Coding</a>
-                        <a href="#" class="dashboard-nav-dropdown-item">English</a>
+                        <a href="live-exam-intro_1.php" class="dashboard-nav-dropdown-item">English</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
-                        <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Study-Metrials</a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="#aptitude" class="dashboard-nav-dropdown-item">Aptitude</a>
@@ -77,7 +77,7 @@ if (!isset($_SESSION['log_id'])) {
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
-                        <a href="#!"class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Usefull-links</a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="#link-aptitude" class="dashboard-nav-dropdown-item">Aptitude</a>
@@ -105,75 +105,173 @@ if (!isset($_SESSION['log_id'])) {
                         </div>
                     </div>
                 </div>
+                <div class='container' id="#register">
+                    <?php include_once("profile-reg.html"); ?>
+                </div>
                 <div class='container' id="#aptitude">
-                    <div class='card'>
-                        <div class='card-header'>
-                            <h1>Welcome
-                                <?php echo $row['name']; ?>
-                            </h1>
-                        </div>
-                        <div class='card-body'>
-                            <p>sgdsgsdgs: Student</p>
+                    <div class="list-items-1">
+                        <div class="one-three">
+                            <h6 class="material-head">Study Materials - Aptitude</h6>
+                            <ul class="scrollable-list">
+                                <?php
+                                // Assuming you have a database connection established
+                                include_once("../config/connection.php");
+                                // Query to retrieve the file_name and file_id from the "materials" table
+                                $query = "SELECT file_id, file_name,file_location FROM materials WHERE type='Aptitude'";
+                                $result = mysqli_query($conn, $query);
+
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $fileId = $row['file_id'];
+                                        $fileName = $row['file_name'];
+                                        $location = $row['file_location'];
+                                        $fileLocation = "admin/" . $location;
+
+                                        echo '<li><a href="' . $fileLocation . '" download target="_blank">' . $fileName . '</a></li>';
+                                    }
+                                } else {
+                                    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class='container' id="#coding">
-                    <div class='card'>
-                        <div class='card-header'>
-                            <h1>Welcome
-                                <?php echo $row['name']; ?>
-                            </h1>
-                        </div>
-                        <div class='card-body'>
-                            <p>ettwetwetwetew: Student</p>
+                    <div class="list-items-1">
+                        <div class="one-three">
+                            <h6 class="material-head">Study Materials - Coding</h6>
+                            <ul class="scrollable-list">
+                                <?php
+                                // Assuming you have a database connection established
+                                include_once("../config/connection.php");
+                                // Query to retrieve the file_name and file_id from the "materials" table
+                                $query = "SELECT file_id, file_name,file_location FROM materials WHERE type='Coding'";
+                                $result = mysqli_query($conn, $query);
+
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $fileId = $row['file_id'];
+                                        $fileName = $row['file_name'];
+                                        $location = $row['file_location'];
+                                        $fileLocation = "admin/" . $location;
+
+                                        echo '<li><a href="' . $fileLocation . '" download target="_blank">' . $fileName . '</a></li>';
+                                    }
+                                } else {
+                                    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                }
+
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class='container' id="#english">
-                    <div class='card'>
-                        <div class='card-header'>
-                            <h1>Welcome
-                                <?php echo $row['name']; ?>
-                            </h1>
-                        </div>
-                        <div class='card-body'>
-                            <p>ewttwetwtew Student</p>
+                    <div class="list-items-1">
+                        <div class="one-three">
+                            <h6 class="material-head">Study Materials - English</h6>
+                            <ul class="scrollable-list">
+                                <?php
+                                // Assuming you have a database connection established
+                                include_once("../config/connection.php");
+                                // Query to retrieve the file_name and file_id from the "materials" table
+                                $query = "SELECT file_id, file_name,file_location FROM materials WHERE type='English'";
+                                $result = mysqli_query($conn, $query);
+
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $fileId = $row['file_id'];
+                                        $fileName = $row['file_name'];
+                                        $location = $row['file_location'];
+                                        $fileLocation = "admin/" . $location;
+
+                                        echo '<li><a href="' . $fileLocation . '" download target="_blank">' . $fileName . '</a></li>';
+                                    }
+                                } else {
+                                    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                }
+
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class='container' id="#link-aptitude">
-                    <div class='card'>
-                        <div class='card-header'>
-                            <h1>Welcome
-                                <?php echo $row['name']; ?>
-                            </h1>
-                        </div>
-                        <div class='card-body'>
-                            <p>ewtewtwtewtStudent</p>
+                    <div class="list-items-1">
+                        <div class="one-three">
+                            <h6 class="material-head">UseFull Links - Aptitude</h6>
+                            <ul class="scrollable-list">
+                                <?php
+                                // Assuming you have a database connection established
+                                include_once("../config/connection.php");
+                                // Query to retrieve the file_name and file_id from the "materials" table
+                                $query = "SELECT link_id, link_name, link FROM links WHERE type='Aptitude'";
+                                $result = mysqli_query($conn, $query);
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $linkId = $row['link_id'];
+                                        $linkName = $row['link_name'];
+                                        $link = $row['link'];
+                                        echo '<li><a href="' . $link . '" download target="_blank">' . $linkName . '</a></li>';
+                                    }
+                                } else {
+                                    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class='container' id="#link-coding">
-                    <div class='card'>
-                        <div class='card-header'>
-                            <h1>Welcome
-                                <?php echo $row['name']; ?>
-                            </h1>
-                        </div>
-                        <div class='card-body'>
-                            <p>ewrewrwrwes: Student</p>
+                <div class="list-items-1">
+                        <div class="one-three">
+                            <h6 class="material-head">UseFull Links - Coding</h6>
+                            <ul class="scrollable-list">
+                                <?php
+                                // Assuming you have a database connection established
+                                include_once("../config/connection.php");
+                                // Query to retrieve the file_name and file_id from the "materials" table
+                                $query = "SELECT link_id, link_name, link FROM links WHERE type='Coding'";
+                                $result = mysqli_query($conn, $query);
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $linkId = $row['link_id'];
+                                        $linkName = $row['link_name'];
+                                        $link = $row['link'];
+                                        echo '<li><a href="' . $link . '" download target="_blank">' . $linkName . '</a></li>';
+                                    }
+                                } else {
+                                    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 <div class='container' id="#link-english">
-                    <div class='card'>
-                        <div class='card-header'>
-                            <h1>Welcome
-                                <?php echo $row['name']; ?>
-                            </h1>
-                        </div>
-                        <div class='card-body'>
-                            <p>eitueotuewStudent</p>
+                <div class="list-items-1">
+                        <div class="one-three">
+                            <h6 class="material-head">UseFull Links - English</h6>
+                            <ul class="scrollable-list">
+                                <?php
+                                // Assuming you have a database connection established
+                                include_once("../config/connection.php");
+                                // Query to retrieve the file_name and file_id from the "materials" table
+                                $query = "SELECT link_id, link_name, link FROM links WHERE type='English'";
+                                $result = mysqli_query($conn, $query);
+                                if ($result) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        $linkId = $row['link_id'];
+                                        $linkName = $row['link_name'];
+                                        $link = $row['link'];
+                                        echo '<li><a href="' . $link . '" download target="_blank">' . $linkName . '</a></li>';
+                                    }
+                                } else {
+                                    echo "Error: " . $query . "<br>" . mysqli_error($conn);
+                                }
+                                ?>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -201,30 +299,51 @@ if (!isset($_SESSION['log_id'])) {
                 }
             });
         });
-        // Get all anchor tags within dashboard-nav-list
-const dashboardNavAnchors = document.querySelectorAll('.dashboard-nav-list a');
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all anchor tags within dashboard-nav-list
+            const dashboardNavAnchors = document.querySelectorAll('.dashboard-nav-list a');
 
-// Get all containers within dashboard-content
-const dashboardContentContainers = document.querySelectorAll('.dashboard-content .container');
+            // Get all containers within dashboard-content
+            const dashboardContentContainers = document.querySelectorAll('.dashboard-content .container');
 
-// Loop through all anchor tags
-dashboardNavAnchors.forEach(anchor => {
-    anchor.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default link behavior
-
-        // Get the target container ID from the href attribute
-        const targetContainerId = this.getAttribute('href');
-
-        // Loop through containers to show/hide based on clicked anchor
-        dashboardContentContainers.forEach(container => {
-            if (container.id === targetContainerId) {
-                container.style.display = 'block'; // Show the target container
-            } else {
-                container.style.display = 'none'; // Hide other containers
+            // Function to show the 'home' page when the page loads
+            function showHomePage() {
+                dashboardContentContainers.forEach(container => {
+                    if (container.id === '#home') {
+                        container.style.display = 'block'; // Show the 'home' container
+                    } else {
+                        container.style.display = 'none'; // Hide other containers
+                    }
+                });
             }
+
+            // Show the 'home' page when the page loads
+            showHomePage();
+
+            // Loop through all anchor tags
+            dashboardNavAnchors.forEach(anchor => {
+                anchor.addEventListener('click', function (event) {
+                    const href = this.getAttribute('href');
+
+                    // Check if the link belongs to the dashboard navigation
+                    if (href.startsWith('#')) {
+                        event.preventDefault(); // Prevent default link behavior
+
+                        // Get the target container ID from the href attribute
+                        const targetContainerId = href;
+
+                        // Loop through containers to show/hide based on clicked anchor
+                        dashboardContentContainers.forEach(container => {
+                            if (container.id === targetContainerId) {
+                                container.style.display = 'block'; // Show the target container
+                            } else {
+                                container.style.display = 'none'; // Hide other containers
+                            }
+                        });
+                    }
+                });
+            });
         });
-    });
-});
 
     </script>
 </body>

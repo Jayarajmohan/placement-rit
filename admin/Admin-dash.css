@@ -352,7 +352,7 @@ h1, .h1 {
 
 .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
     text-decoration: none;
-    color: #875de5;
+    color: #005b96;
 }
 
 .menu-toggle i {
@@ -384,161 +384,69 @@ h1, .h1 {
     overflow: hidden;
     background-color: rgba(236, 238, 239, 0.3);
 }
-
-
-/* list style */
-
-.list-items-1 {
-    width: 90%;
-    margin: 10px;
-    background-color: #e9e5e5;
-    /*max-width: 1000px;*/
+/* Form design start here */
+.upload-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
     border-radius: 10px;
-    overflow: hidden;
-    /* padding: 10px 0 10px 20px; */
-  }
-  .list-items-1 .one-three {
-    width: 100%;
-    float: left;
-    overflow: hidden;
-    margin: 0 10px;
-  }
-  .list-items-1 .one-three:last-child {
-    margin-right: 0;
-  }
-  .list-items-1 ul {
-    padding: 5px 0;
-    margin: 0;
-    list-style: none;
-  }
-  .list-items-1 li {
-    cursor: pointer;
-    padding: 0 10px;
-  }
-  
-  .list-items-1 a {
-    text-decoration: none;
-    line-height: 1.4;
-    font-family: Poppins,Helvetica,sans-serif;
-    padding: 10px;
-    display: block;
-    box-sizing: border-box;
-   
-    font-weight: 500;
-    color: #555;
-    margin-bottom: 5px;
-    border-radius: 3px;
-    
-  }
-  .list-items-1 .one-three ul li:hover a {
-    text-decoration: none;
-    display: block;
-    background: #005b96;
-  line-height: 1.4;
-    padding: 10px;
-    display: block;
-    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 5px;
-    border-radius: 3px;
-    box-sizing: border-box;
-    display: block;
-  
-  }
-  span.list-icon {
-    color: #005b96;
-    display: block;
-    float: right;
-    font-size: 12px;
-    font-weight: normal;
-    margin-right: 5px;
-    margin-top: 3px;
-  }
-  .list-items-1 .one-three ul li:hover span.list-icon {
-    color: #fff;
-    display: block;
-    float: right;
-    font-size: 15px;
-    font-weight: normal;
-    margin-right: 4px;
-    margin-top: 3px;
-  }
-  
-  @media all and (max-width: 912px) {
-    .list-items-1 .one-three {
-    width: 30%;
-    float: left;
+.label {
+    font-weight: bold;
+}
+
+.image-container {
+    position: relative;
     overflow: hidden;
-    margin: 0 5px;
-  }
-  .list-items-1 a {
-    line-height: 1.4;
-    font-family: Poppins,Helvetica,sans-serif;
-    padding: 10px;
-    display: block;
-    box-sizing: border-box;
-    transition: .6s ease-out; 
-    font-weight: 500;
-    color: #555;
-    margin-bottom: 5px;
-    border-radius: 3px;
-    }
-  .list-items-1 .one-three ul li:hover a {
-    padding: 10px;
-    display: block;
-    box-sizing: border-box;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 5px;
-    border-radius: 3px;
-    
-    }
-    
-  }
-  @media all and (max-width: 768px) {
-    
-  .list-items-1 .one-three {
-    width: 46%;
-    float: left;
-    overflow: hidden;
-    margin: 5px 10px;
-  }
-    .list-items-1 .one-three ul li:hover a {
-    padding: 10px;
-    display: block;
-    box-sizing: border-box;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 5px;
-    border-radius: 3px;
-    
-    }
-  
-  }
-  @media all and (max-width: 556px) {
-      .list-items-1 {
-    padding: 10px 10px 10px 10px;
-  }
-   .list-items-1 .one-three {
+}
+
+.image-container img {
     width: 100%;
-    float: left;
-    overflow: hidden;
-    margin: 0 0;
-  }
-      .list-items-1 .one-three ul li:hover a {
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+}
+
+.text-input {
     padding: 10px;
-    display: block;
-    box-sizing: border-box;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 5px;
-    border-radius: 3px;
-    
-    }
-  
-  }
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    padding: 10px;
+    background-color: #005b96;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0278c7;
+}
+
 
 @media (min-width: 992px) {
     .dashboard-app {

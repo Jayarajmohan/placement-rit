@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             // Redirect based on user type
             switch ($type) {
                 case 0:
-                    header('Location: admin/admin-dash.php');
+                    header('Location: admin/dashboard-admin.php');
                     exit;
                 case 1:
                     header('Location: faculty/faculty-dash.php');

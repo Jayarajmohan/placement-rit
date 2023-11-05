@@ -1,0 +1,79 @@
+/* Apply a box-sizing border-box model to all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set body background color */
+body {
+    background-color: rgb(174, 211, 235);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    margin: 20px;
+    flex-wrap: wrap;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 80%; /* Adjusted width for responsiveness */
+    max-width: 900px; /* Added maximum width for larger screens */
+    margin: 20px auto; /* Center the container */
+    padding: 20px; /* Added padding to content */
+}
+
+.header {
+    width: 100%;
+}
+
+.header h4 {
+    padding: 20px;
+    font-size: 1.3rem;
+    color: #0877c6;
+}
+
+.content {
+    width: 100%;
+}
+
+.content .title {
+    padding: 10px 0px; /* Adjusted padding */
+    font-size: 1.2rem;
+    color: #0877c6;
+}
+
+.content ul li {
+    padding: 5px 0; /* Adjusted padding */
+    font-size: 1.2rem; /* Added unit to font-size */
+    line-height: 1.5; /* Adjusted line height */
+}
+
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    width: 100%;
+}
+
+.button button {
+    cursor: pointer;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    margin: 10px;
+    width: calc(50% - 20px); /* Adjusted width */
+    background-color: #0877c6;
+    color: #fff;
+    text-align: center; /* Center text */
+}
+
+.button button:nth-child(2) {
+    cursor: pointer;
+    background-color: #c62b08;
+}

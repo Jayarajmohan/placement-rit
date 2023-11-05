@@ -21,10 +21,10 @@ if (!isset($_SESSION['log_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dash-style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="Admin-dash.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Faculty-Dashboard</title>
+    <title>Admin-Dashboard</title>
     <style>
         a {
             text-decoration: none;
@@ -41,6 +41,15 @@ if (!isset($_SESSION['log_id'])) {
             </header>
             <nav class="dashboard-nav-list">
                 <a href="#home" class="dashboard-nav-item"><i class="fas fa-home"></i>Home </a>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i>Gallery</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#add-image" class="dashboard-nav-dropdown-item">Add images</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Update images</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Delete images</a>
+                    </div>
+                </div>
                 <div class='dashboard-nav-dropdown'>
                     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Questions</a>
@@ -68,6 +77,33 @@ if (!isset($_SESSION['log_id'])) {
                         <a href="#" class="dashboard-nav-dropdown-item">Delete Metrials</a>
                     </div>
                 </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i>Placements events</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#placementevents" class="dashboard-nav-dropdown-item">Add events</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Update events</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Delete events</a>
+                    </div>
+                </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i>CGPA events</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#cgpaevents" class="dashboard-nav-dropdown-item">Add events</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Update events</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Delete events</a>
+                    </div>
+                </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i>View</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#Queries" class="dashboard-nav-dropdown-item">View Queries</a>
+                        <a href="#feedbacks" class="dashboard-nav-dropdown-item">View Feedbacks</a>
+                    </div>
+                </div>
+                <a href="#Add-faculty" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Add faculty</a>
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -83,11 +119,23 @@ if (!isset($_SESSION['log_id'])) {
                             </h1>
                         </div>
                         <div class='card-body'>
-                            <p>Your Account types is: Faculty</p>
+                            <p>Ydrgdrydrye is: Admin</p>
                         </div>
                     </div>
                 </div>
-                
+                <div class='container' id="#add-image">
+                    <form action="image-add.php" method="post" enctype="multipart/form-data" class="upload-form">
+                        <label for="image" class="label">Select image to upload:</label>
+                        <div class="image-container">
+                            <img id="img" src="choose.png" alt="Preview Image" height="200px"
+                                style="border-radius: 10px;">
+                            <input type="file" name="image" id="image" class="file-input">Choose image
+                        </div>
+                        <label for="about" class="label">About the image:</label>
+                        <input type="text" name="about" id="about" class="text-input">
+                        <input type="submit" value="Upload Image" name="submit" class="submit-btn">
+                    </form>
+                </div>
                 <div class='container' id="#questions">
                     <form action="add-question.php" method="post" enctype="multipart/form-data" class="upload-form">
                         <select name="table-name" class="select">
@@ -166,9 +214,100 @@ if (!isset($_SESSION['log_id'])) {
                         <input type="submit" value="Upload file" name="submit" class="submit-btn">
                     </form>
                 </div>
+                <div class='container' id="#placementevents">
+                    <form action="add-events.php" method="post" enctype="multipart/form-data" class="upload-form">
+                        <label for="text">Add Placement events</label>
+
+                        <label for="name">Company Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="description">Description :</label>
+                        <textarea name="description" id="description" required></textarea>
+
+                        <label for="start">Date:</label>
+                        <input type="date" id="start" name="date" required>
+
+                        <label for="link">Link:</label>
+                        <input type="url" id="link" name="link" required>
+
+                        <br><br>
+                        <input type="submit" value="Add Event" name="submit" class="submit-btn">
+                    </form>
+
+                </div>
+                <div class='container' id="#cgpaevents">
+                    <form action="add-cgpaevents.php" method="post" enctype="multipart/form-data" class="upload-form">
+                        <label for="text">Add CGPA events</label>
+
+                        <label for="name">Event Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="description">Description :</label>
+                        <textarea name="description" id="description" required></textarea>
+
+                        <label for="start">Date:</label>
+                        <input type="date" id="start" name="date" required>
+
+                        <label for="link">Link:</label>
+                        <input type="url" id="link" name="link" required>
+
+                        <br><br>
+                        <input type="submit" value="Add Event" name="submit" class="submit-btn">
+                    </form>
+                </div>
+                <div class='container' id="#Queries">
+                    <?php
+                    include_once("./view-queries.php");
+                    ?>
+                </div>
+                <div class='container' id="#feedbacks">
+                    <ul>
+                        <li class="q-list">Q1: Is there a section for alumni success stories or a forum for community
+                            interaction?</li>
+                        <li class="q-list">Q2: Is contact information for the placement cell easy to find?</li>
+                        <li class="q-list">Q3: Is there an easy way to submit resumes and applications through the
+                            website?</li>
+                        <li class="q-list">Q4: Is there relevant content, such as career advice, interview tips, and
+                            resume templates?</li>
+                        <li class="q-list">Q5: Is the website easy to navigate?</li>
+                        <li class="q-list">Q6: Is it clear how to apply for job listings?</li>
+                        <li class="q-list">Q7: Is there an easy way to submit?</li>
+                    </ul>
+                    <?php
+                    include_once("./view-feedbacks.php");
+                    ?>
+                </div>
+                <div class='container' id="#Add-faculty">
+                    <form action="register_1.php" method="post" class="upload-form">
+                        <div class="form-group">
+                            <label for="username" class="label">Username</label>
+                            <input type="text" name="username" id="username" class="text-input" placeholder="Username"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="label">Email</label>
+                            <input type="email" name="email" id="email" class="text-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="label">Password</label>
+                            <input type="password" name="password" id="password" class="text-input"
+                                placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Register</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        let img = document.getElementById('img');
+        let input = document.getElementById('image');
+
+        input.onchange = (e) => {
+            if (input.files[0])
+                img.src = URL.createObjectURL(input.files[0]);
+        };
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         const mobileScreen = window.matchMedia("(max-width: 990px )");
