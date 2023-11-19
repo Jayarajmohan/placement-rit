@@ -5,101 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/events.css?v=<?php echo time(); ?>">
     <title></title>
-    <style>
-        .card-conatiner {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card {
-            background-color: #f0f0f0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            box-sizing: border-box;
-            margin: 5px;
-        }
-
-        .card i {
-            font-size: 48px;
-            color: #3498db;
-        }
-
-        .card h2 {
-            margin: 10px 0;
-            font-size: 20px;
-        }
-
-        .card p {
-            font-size: 24px;
-            color: #27ae60;
-        }
-        .section {
-  margin-top: 20px;
-  margin-left: 20px;
-  border-radius: 10px;
-  padding: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  background-color: #ffffff;
-}
-
-.events-list {
-  width: 100%;
-  font-size: 0.9em;
-}
-
-.events-list tr td {
-  padding: 5px 20px 5px 0;
-}
-
-.events-list tr td:last-child {
-  padding: 5px 0;
-  text-align: right;
-}
-
-.events-list tr:hover .event-date {
-  border-left: 5px solid #4f8db3;
-}
-
-.events-list .event-date {
-  margin: 3px 0;
-  padding: 2px 10px;
-  border-left: 5px solid #CFCFCF;
-  -webkit-transition: all .25s linear;
-  -moz-transition: all .25s linear;
-  -o-transition: all .25s linear;
-  -ms-transition: all .25s linear;
-  transition: all .25s linear;
-}
-
-.events-list .event-date .event-day {
-  color: #004A5B;
-  font-size: 1.2em;
-  font-weight: 600;
-  text-align: left;
-}
-
-.events-list .event-date .event-month {
-  color: #777;
-  font-size: 1em;
-  font-weight: 600;
-  text-align: left;
-}
-
-.events-list .event-date .event-venue,
-.events-list .event-date .event-price {
-  white-space: nowrap;
-}
-    </style>
 </head>
 <body>
 <?php include_once("header.php") ?>
-
-        <div class="cards-container">
+<section class="inner-banner">
+      <div class="container-fluid banner">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="header">
+              <h1>Up Comming CGPA SESSIONS</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+        <div class="cards-container" style="display: flex;justify-content: center;">
                 <?php
                 include_once("./config/connection.php");
 
@@ -178,8 +100,6 @@
             </div>
         <div class="container">
                 <div class="section">
-                    <div class="blog-post blog-single-post">
-                        <div class="single-post-title">
                             <h2>Upcoming CGPA Sessions</h2>
                         </div>
                         <div class="single-post-content">
@@ -214,12 +134,8 @@
                                 
                                 ?>
                             </table>
-                        </div>
-                    </div>
                 </div>
                 <div class="section">
-                    <div class="blog-post blog-single-post">
-                        <div class="single-post-title">
                             <h2>Older CGPA Sessions</h2>
                         </div>
                         <div class="single-post-content">
@@ -256,8 +172,6 @@
                             </table>
                         </div>
                     </div>
-                </div>
-            </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

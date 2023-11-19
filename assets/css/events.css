@@ -1,0 +1,143 @@
+.card-conatiner {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 5px;
+}
+
+.card i {
+    font-size: 48px;
+    color: #3498db;
+}
+
+.card h5 {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.card p {
+    font-size: 24px;
+    color: #27ae60;
+}
+/* Events style */
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.section {
+/* margin-top: 20px;
+margin-left: 20px; */
+flex-shrink: 1;
+border-radius: 10px;
+padding: 20px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14px;
+line-height: 20px;
+background-color: #ffffff;
+}
+
+.events-list {
+width: 100%;
+font-size: 0.9em;
+}
+
+.events-list tr td {
+padding: 5px 20px 5px 0;
+}
+
+.events-list tr td:last-child {
+padding: 5px 0;
+text-align: right;
+}
+
+.events-list tr:hover .event-date {
+border-left: 5px solid #4f8db3;
+}
+
+.events-list .event-date {
+margin: 3px 0;
+padding: 2px 10px;
+border-left: 5px solid #CFCFCF;
+-webkit-transition: all .25s linear;
+-moz-transition: all .25s linear;
+-o-transition: all .25s linear;
+-ms-transition: all .25s linear;
+transition: all .25s linear;
+}
+
+.events-list .event-date .event-day {
+color: #004A5B;
+font-size: 1.2em;
+font-weight: 600;
+text-align: left;
+}
+
+.events-list .event-date .event-month {
+color: #777;
+font-size: 1em;
+font-weight: 600;
+text-align: left;
+}
+
+.events-list .event-date .event-venue,
+.events-list .event-date .event-price {
+white-space: nowrap;
+}
+
+:root{
+--primary:hsla(222, 82%, 34%, 0.26);
+--secondary:hsla(222, 82%, 34%, 0.199);
+}
+.banner{
+background-color: #a2cce7;
+background: linear-gradient(135deg,var(--primary),var(--secondary)),
+        url('../images/banner.jpg') no-repeat center center / cover;
+        background-attachment: fixed;
+background-size: cover;
+position: relative;
+}
+
+
+.header{
+margin: 6rem auto;
+text-align: center;
+align-items: stretch;
+display: flex !important;
+background-color: #802b8800;
+font-family: 'Montserrat', sans-serif;
+}
+.inner-banner h1 {
+display: block;
+padding-bottom: 1rem;
+font-family: 'texgyreadventorbold';
+font-size: 2rem;
+color: #004e89;
+text-transform: uppercase;
+margin-bottom: 0px;
+background: #ffffff;
+padding-top: 1rem;
+}
+.inner-banner .header::before,.inner-banner .header::after{
+content: "";
+flex: 1;
+}
+.inner-banner .header::before{
+background: linear-gradient(to right, #ffffff00, #ffffff) !important;
+}
+.inner-banner .header::after{
+background: linear-gradient(to left, #ffffff00, #ffffff) !important;
+}
+
+@media(max-width: 768px) {
+    .conatiner {
+        display: flex;
+        flex-direction: column;
+    }
+}

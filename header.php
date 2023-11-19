@@ -106,7 +106,7 @@
             <!-- <li class="nav-item mx-2">
               <a class="nav-link" href="career_prep_1.php">Career Prep Toolkit</a>
             </li> -->
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Career Prep Toolkit
           </a>
@@ -118,7 +118,7 @@
             <li><a class="dropdown-item" href="career_prep_5.php">Usefull links</a></li>
             
           </ul>
-        </li>
+        </li> -->
             <!-- <li class="nav-item mx-2">
               <a class="nav-link" href="connect_engage_1.php">Connect & Engage</a>
             </li> -->
