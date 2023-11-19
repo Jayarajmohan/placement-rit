@@ -12,10 +12,12 @@
 
 <body>
   <header>
+    <div>
     <div class="top-bar">
       <div class="top-right-content">
         <p>placement@rit.in</p>
       </div>
+    </div>
     </div>
     <div class="title-container container-fluid">
       <div class="logo">
@@ -24,6 +26,13 @@
       <div class="logo-title">
         <h3>Placement Cell And Career Guidance</h3>
         <h5>Rajiv Gandhi Institute of Technology Kottayam</h5>
+      </div>  
+      <!-- <div class="logo-title">
+        <h3>Placement Cell And Career Guidance</h3>
+        <h5>Rajiv Gandhi Institute of Technology Kottayam</h5>
+      </div> -->
+      <div class="logo">
+        <img src="./assets/images/rit-logo.png" alt="">
       </div>
     </div>
   </header>
@@ -152,15 +161,17 @@
               <div class="card-body">
                 <h5 class="card-title">Prof.Ebin M Manuel</h5>
                 <p class="card-text">Placement Officer</p>
+                <p class="card-text">8075723660</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card custom-card border-0">
-              <img src="./assets/images/dummy-man.png" class="card-img-top" alt="...">
+              <img src="./assets/images/Muhamed.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Muhamed Fayyas N</h5>
                 <p class="card-text">Training Lead</p>
+                <p class="card-text">8078197494</p>
               </div>
             </div>
           </div>
@@ -170,6 +181,7 @@
               <div class="card-body">
                 <h5 class="card-title">Rebeeh C V</h5>
                 <p class="card-text">Student Coordinator</p>
+                <p class="card-text">9562015680</p>
               </div>
             </div>
           </div>
@@ -194,6 +206,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container-fluid image-container">
+      <div class="icon"><img src="./assets/images/homeicon.png" alt="" srcset=""></div>
+      <div class="text">Career Guidance and Placement Cell serves as a center that facilitates and inspires students for achieving employment, higher education and entrepreneurial aspiration.</div>
   </div>
   <footer>
     <div class="footer-bottom">

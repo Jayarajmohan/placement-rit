@@ -47,6 +47,7 @@ if (!isset($_SESSION['log_id'])) {
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="#register" class="dashboard-nav-dropdown-item">Profile Registration</a>
                         <a href="#" class="dashboard-nav-dropdown-item">Update Profile</a>
+                        <a href="#resume" class="dashboard-nav-dropdown-item">Resume Checker</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
@@ -275,6 +276,9 @@ if (!isset($_SESSION['log_id'])) {
                         </div>
                     </div>
                 </div>
+                <div class='container' id="#resume">
+                    <?php include("resume_checker.php") ?>
+                </div>
             </div>
         </div>
     </div>
@@ -327,7 +331,7 @@ if (!isset($_SESSION['log_id'])) {
 
                     // Check if the link belongs to the dashboard navigation
                     if (href.startsWith('#')) {
-                        event.preventDefault(); // Prevent default link behavior
+                        // event.preventDefault(); // Prevent default link behavior
 
                         // Get the target container ID from the href attribute
                         const targetContainerId = href;

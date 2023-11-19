@@ -112,16 +112,7 @@ if (!isset($_SESSION['log_id'])) {
             <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
             <div class='dashboard-content'>
                 <div class='container' id="#home">
-                    <div class='card'>
-                        <div class='card-header'>
-                            <h1>Welcome
-
-                            </h1>
-                        </div>
-                        <div class='card-body'>
-                            <p>Ydrgdrydrye is: Admin</p>
-                        </div>
-                    </div>
+                <?php include('user-info.php'); ?>
                 </div>
                 <div class='container' id="#add-image">
                     <form action="image-add.php" method="post" enctype="multipart/form-data" class="upload-form">
