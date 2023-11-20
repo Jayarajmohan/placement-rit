@@ -94,7 +94,7 @@
           </ul>
         </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#">Placement Statistics</a>
+              <a class="nav-link" href="placement-statastics.php">Placement Statistics</a>
             </li>
             <!-- <li class="nav-item mx-2">
               <a class="nav-link" href="Placement_event_1.php">Events Plan</a>
