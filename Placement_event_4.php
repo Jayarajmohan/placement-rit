@@ -22,9 +22,88 @@
         </div>
       </div>
       </section>
-<div class="container">
+      <div class="container">
+        <div class="section">
+            <h2>Upcoming Internships</h2>
+        </div>
+        <div class="single-post-content">
+            <table class="events-list">
+                <?php
+                include_once("./config/connection.php");
 
-       
+                // Fetch data from the database for events from today onwards
+                $query = "SELECT * FROM internships WHERE event_date >= CURDATE() ORDER BY event_date";
+                $result = $conn->query($query);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $eventDate = date("d M", strtotime($row['event_date']));
+                        $company_name = $row['company_name'];
+                        $Details = $row['details'];
+                        $companyLink = $row['company_link'];
+
+                        echo '<tr>
+            <td>
+                <div class="event-date">
+                    <div class="event-day">' . $eventDate . '</div>
+                </div>
+            </td>
+            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i>' . $company_name . '</td>
+            <td class="event-price hidden-xs">' . $Details . '</td>
+            <td><a href="' . $companyLink . '" class="btn btn-grey btn-sm event-more">Internship Link</a></td>
+        </tr>';
+                    }
+                }
+
+
+                ?>
+
+            </table>
+        </div>
+        <div class="section">
+            <h2>Older Internships</h2>
+        </div>
+
+
+
+
+
+
+        <div class="single-post-content">
+            <table class="events-list">
+                <?php
+                include_once("./config/connection.php");
+
+                // Fetch data from the database for events older than today
+                $query = "SELECT * FROM internships WHERE event_date < CURDATE() ORDER BY event_date DESC";
+                $result = $conn->query($query);
+
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $eventDate = date("d M", strtotime($row['event_date']));
+                        $company_name = $row['company_name'];
+                        $Details = $row['details'];
+                        $companyLink = $row['company_link'];
+
+                        echo '<tr>
+            <td>
+                <div class="event-date">
+                    <div class="event-day">' . $eventDate . '</div>
+                </div>
+            </td>
+            <td class="event-venue hidden-xs"><i class="icon-map-marker"></i>' . $company_name . '</td>
+            <td class="event-price hidden-xs">' . $Details . '</td>
+            <td><a href="' . $companyLink . '" class="btn btn-grey btn-sm event-more">Company Link</a></td>
+        </tr>';
+                    }
+                }
+
+                $conn->close();
+                ?>
+
+
+            </table>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -50,24 +50,24 @@ if (!isset($_SESSION['log_id'])) {
                         <a href="#" class="dashboard-nav-dropdown-item">Video</a>
                     </div>
                 </div>
-                <div class='dashboard-nav-dropdown'><a href="#!"
+                <!-- <div class='dashboard-nav-dropdown'><a href="#!"
                         class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Users </a>
                     <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
                             href="#" class="dashboard-nav-dropdown-item">Subscribed</a><a href="#"
                             class="dashboard-nav-dropdown-item">Non-subscribed</a><a href="#"
                             class="dashboard-nav-dropdown-item">Banned</a><a href="#"
                             class="dashboard-nav-dropdown-item">New</a></div>
-                </div>
-                <div class='dashboard-nav-dropdown'><a href="#!"
+                </div> -->
+                <!-- <div class='dashboard-nav-dropdown'><a href="#!"
                         class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i>
                         Payments </a>
                     <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
                             href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#"
                             class="dashboard-nav-dropdown-item"> Projections</a>
                     </div>
-                </div>
-                <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a><a href="#"
-                    class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
+                </div> -->
+                <!-- <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a><a href="#"
+                    class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a> -->
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -83,11 +83,13 @@ if (!isset($_SESSION['log_id'])) {
                                 style="border-radius: 10px;">
                             <input type="file" name="image" id="image" class="file-input">Choose image
                         </div>
+                        <label for="name" class="label">Company Name</label>
+                        <input type="text" value = <?php echo $row['name']; ?> name="cname" id="name" class="text-input">
                         <label for="about" class="label">About the Company</label>
                         <input type="text" name="about" id="about" class="text-input">
                         <label for="link">Link:</label>
                         <input type="url" id="link" name="link" required>
-                        <input type="submit" value="Upload Image" name="submit" class="submit-btn">
+                        <input type="submit" value="Submit" name="submit" class="submit-btn">
                     </form>
                 </div>
             </div>

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="./assets/images/cgpa-logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css?v=<?php echo time(); ?>">
   <title>Placement cell </title>
 </head>
@@ -13,11 +14,11 @@
 <body>
   <header>
     <div>
-    <div class="top-bar">
-      <div class="top-right-content">
-        <p>placement@rit.in</p>
+      <div class="top-bar">
+        <div class="top-right-content">
+          <p>placement@rit.ac.in</p>
+        </div>
       </div>
-    </div>
     </div>
     <div class="title-container container-fluid">
       <div class="logo">
@@ -26,7 +27,7 @@
       <div class="logo-title">
         <h3>Placement Cell And Career Guidance</h3>
         <h5>Rajiv Gandhi Institute of Technology Kottayam</h5>
-      </div>  
+      </div>
       <!-- <div class="logo-title">
         <h3>Placement Cell And Career Guidance</h3>
         <h5>Rajiv Gandhi Institute of Technology Kottayam</h5>
@@ -58,35 +59,39 @@
               <a class="nav-link" href="Entrollment_payment_1.php">Enrollment & Payment</a>
             </li> -->
             <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Enrollment & Payment
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="student-reg.html">Student Register</a></li>
-            <li><a class="dropdown-item" href="company-reg.html">Company Register</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="payments.html">Payments</a></li>
-          </ul>
-        </li>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Enrollment & Payment
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="student-reg.html">Student Register</a></li>
+                <li><a class="dropdown-item" href="company-reg.html">Company Register</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="payments.html">Payments</a></li>
+              </ul>
+            </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#">Placement Statistics</a>
+              <a class="nav-link" href="placement-statastics.php">Placement Statistics</a>
             </li>
             <!-- <li class="nav-item mx-2">
               <a class="nav-link" href="Placement_event_1.php">Events Plan</a>
             </li> -->
             <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Events Plan
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="Placement_event_1.php">Upcomming Recruitment</a></li>
-            <li><a class="dropdown-item" href="Placement_event_2.php">Recruiters</a></li>
-            <li><a class="dropdown-item" href="Placement_event_3.php">Upcomming CGPA Sessions</a></li>
-            <li><a class="dropdown-item" href="Placement_event_4.php">Internships</a></li>
-            <li><a class="dropdown-item" href="Placement_event_5.php">Placement Recoreds</a></li>
-            
-          </ul>
-        </li>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Events Plan
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="Placement_event_1.php">Upcomming Recruitment</a></li>
+                <li><a class="dropdown-item" href="Placement_event_2.php">Recruiters</a></li>
+                <li><a class="dropdown-item" href="Placement_event_3.php">Upcomming CGPA Sessions</a></li>
+                <li><a class="dropdown-item" href="Placement_event_4.php">Internships</a></li>
+                <li><a class="dropdown-item" href="Placement_event_5.php">Placement Recoreds</a></li>
+
+              </ul>
+            </li>
             <!-- <li class="nav-item mx-2">
               <a class="nav-link" href="career_prep_1.php">Career Prep Toolkit</a>
             </li> -->
@@ -107,18 +112,19 @@
               <a class="nav-link" href="connect_engage_1.php">Connect & Engage</a>
             </li> -->
             <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Connect & Engage
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="connect_engage_1.php">Gallery</a></li>
-            <li><a class="dropdown-item" href="connect_engage_2.php">Queries</a></li>
-            <li><a class="dropdown-item" href="connect_engage_3.php">Feedbacks</a></li>
-            <li><a class="dropdown-item" href="connect_engage_4.php">Contact Us</a></li>
-            <li><a class="dropdown-item" href="connect_engage_5.php">About Us</a></li>
-            
-          </ul>
-        </li>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Connect & Engage
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="connect_engage_1.php">Gallery</a></li>
+                <li><a class="dropdown-item" href="connect_engage_2.php">Queries</a></li>
+                <li><a class="dropdown-item" href="connect_engage_3.php">Feedbacks</a></li>
+                <li><a class="dropdown-item" href="connect_engage_4.php">Contact Us</a></li>
+                <li><a class="dropdown-item" href="connect_engage_5.php">About Us</a></li>
+
+              </ul>
+            </li>
           </ul>
           <div class="d-flex justify-content-center flex-lg-row align-items-center gap-3">
             <a href="login.html" class="text-white text-decoration-none px-3 py-1 bg-primary rounded-2">Login</a>
@@ -203,13 +209,29 @@
       <div class="col-md-4">
         <div class="strut-image">
           <img src="./assets/images/CGPC connect.jpg" alt="">
+          <div class="index-buttons"><button><i class="fa-solid fa-envelope"></i>Placement Officer Message</button>
+            <button><a href="./assets/brochure.pdf" style="text-decoration: none;color:inherit" target="_blank" ><i class="fa-solid fa-book-open"></i>Placement Brochure</a></button>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
   <div class="container-fluid image-container">
-      <div class="icon"><img src="./assets/images/homeicon.png" alt="" srcset=""></div>
-      <div class="text">Career Guidance and Placement Cell serves as a center that facilitates and inspires students for achieving employment, higher education and entrepreneurial aspiration.</div>
+    <div class="icon"><img src="./assets/images/homeicon.png" alt="" srcset=""></div>
+    <div class="text">Career Guidance and Placement Cell serves as a center that facilitates and inspires students for
+      achieving employment, higher education and entrepreneurial aspiration.</div>
+  </div>
+  <div class="recruiters-head">
+    <h6>Our Major Recruiters</h6>
+  </div>
+  <div class="container companies-container">
+    <div class="companies"><img src="./assets/images/1.png" alt="" srcset=""></div>
+    <div class="companies"><img src="./assets/images/2.png" alt="" srcset=""></div>
+    <div class="companies"><img src="./assets/images/3.png" alt="" srcset=""></div>
+    <div class="companies"><img src="./assets/images/4.png" alt="" srcset=""></div>
+    <div class="companies"><img src="./assets/images/5.png" alt="" srcset=""></div>
+    <div class="companies"><img src="./assets/images/6.png" alt="" srcset=""></div>
   </div>
   <footer>
     <div class="footer-bottom">

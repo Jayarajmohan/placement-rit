@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 
     if ($stmt->execute()) {
         echo "<script> alert('Image uploaded successfully.');
-        window.location= 'admin-dash.php #Questions';
+        window.location= 'dashboard-admin.php';
         </script>";
     } else {
         echo "Error: " . $stmt->error;
@@ -31,5 +31,5 @@ if (isset($_POST['submit'])) {
 }
 
 // Close the database connection
-$conn->close();
+// $conn->close();
 ?>

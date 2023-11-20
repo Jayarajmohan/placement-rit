@@ -158,11 +158,11 @@ form {
         <i class="fa-solid fa-chalkboard-user"></i>
         <h2>Faculty : <?php echo $userCount; ?></h2>
     </div>
-    <div class="card">
+    <!-- <div class="card">
         <i class="fa fa-envelope"></i>
         <h2>Title 4</h2>
         <p>987</p>
-    </div>
+    </div> -->
 </div>
 <div class="table-container">
 <div class="table">

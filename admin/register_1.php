@@ -29,13 +29,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check for success
     if ($stmt->affected_rows === 1) {
-        echo "Registration successful!";
+        // echo "Registration successful!";
+        echo "<script> alert('Registration successful');
+        window.location= 'dashboard-admin.php';
+        </script>";
     } else {
         echo "Error: " . $stmt->error;
     }
 
     // Close the statement and connection
     $stmt->close();
-    $conn->close();
+    // $conn->close();
 }
 ?>

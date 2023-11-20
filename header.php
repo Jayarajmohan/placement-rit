@@ -1,11 +1,11 @@
 <style>
     header {
+    max-width: 100%;
     background-color: #f2f2f2;
 }
 
 .top-bar {
     background-color: #005b96;
-    width: 100%;
     height: 20px;
 }
 
@@ -37,10 +37,12 @@
 }
 </style>
 <header>
+<div>
     <div class="top-bar">
       <div class="top-right-content">
-        <p>placement@rit.in</p>
+        <p>placement@rit.ac.in</p>
       </div>
+    </div>
     </div>
     <div class="title-container container-fluid">
       <div class="logo">
@@ -49,6 +51,13 @@
       <div class="logo-title">
         <h3>Placement Cell And Career Guidance</h3>
         <h5>Rajiv Gandhi Institute of Technology Kottayam</h5>
+      </div>  
+      <!-- <div class="logo-title">
+        <h3>Placement Cell And Career Guidance</h3>
+        <h5>Rajiv Gandhi Institute of Technology Kottayam</h5>
+      </div> -->
+      <div class="logo">
+        <img src="./assets/images/rit-logo.png" alt="">
       </div>
     </div>
   </header>

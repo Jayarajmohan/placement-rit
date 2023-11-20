@@ -26,5 +26,5 @@ if (isset($_POST['submit'])) {
 }
 
 // Close the database connection
-$conn->close();
+// $conn->close();
 ?>

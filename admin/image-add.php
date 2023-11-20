@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // execute statement
             if (mysqli_stmt_execute($stmt)) {
                 echo "<script> alert('Image uploaded successfully.');
-        window.location= 'admin-dash.php#gallery';
+        window.location= 'dashboard-admin.php';
         </script>";
                 // echo "Image uploaded successfully.";
                 // header("add-image.php");
@@ -53,13 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_close($conn);
         } else {
             echo "<script> alert('Only JPG, JPEG, and PNG files are allowed.');
-        window.location= 'admin-dash.php#gallery';
+        window.location= 'dashboard-admin.php';
         </script>";
             // echo "Only JPG, JPEG, and PNG files are allowed.";
         }
     } else {
         echo "<script> alert('Please select an image to upload.');
-        window.location= 'admin-dash.php#gallery';
+        window.location= 'dashboard-admin.php';
         </script>";
         // echo "Please select an image to upload.";
     }

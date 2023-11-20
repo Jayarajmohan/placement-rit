@@ -82,6 +82,7 @@ if (!isset($_SESSION['log_id'])) {
                         <i class="fas fa-photo-video"></i>Placements events</a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="#placementevents" class="dashboard-nav-dropdown-item">Add events</a>
+                        <a href="#internships" class="dashboard-nav-dropdown-item">Add Internships</a>
                         <a href="#" class="dashboard-nav-dropdown-item">Update events</a>
                         <a href="#" class="dashboard-nav-dropdown-item">Delete events</a>
                     </div>
@@ -104,6 +105,7 @@ if (!isset($_SESSION['log_id'])) {
                     </div>
                 </div>
                 <a href="#Add-faculty" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Add faculty</a>
+                <a href="#Add-stati" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Add Statatics</a>
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -112,7 +114,7 @@ if (!isset($_SESSION['log_id'])) {
             <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
             <div class='dashboard-content'>
                 <div class='container' id="#home">
-                <?php include('user-info.php'); ?>
+                    <?php include('user-info.php'); ?>
                 </div>
                 <div class='container' id="#add-image">
                     <form action="image-add.php" method="post" enctype="multipart/form-data" class="upload-form">
@@ -287,6 +289,31 @@ if (!isset($_SESSION['log_id'])) {
                         <button type="submit" class="submit-btn">Register</button>
                     </form>
                 </div>
+                <div class='container' id="#Add-stati">
+                    <?php
+                    include_once("./placement-stat.php");
+                    ?>
+                </div>
+                <div class='container' id="#internships">
+                    <form action="add-internships.php" method="post" class="upload-form">
+                        <label for="text">Add Internships</label>
+
+                        <label for="name">Company Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="description">Description :</label>
+                        <textarea name="description" id="description" required></textarea>
+
+                        <label for="start">Date:</label>
+                        <input type="date" id="start" name="date" required>
+
+                        <label for="link">Link:</label>
+                        <input type="url" id="link" name="link" required>
+                        <br><br>
+                        <input type="submit" value="Add Internship" name="submit" class="submit-btn">
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>

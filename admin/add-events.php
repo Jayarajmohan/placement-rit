@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
     if ($stmt->execute()) {
         echo "<script> alert('Event information inserted into the database successfully.');
-                window.location= 'admin-dash.php#placementEvents';
+                window.location= 'dashboard-admin.php';
                 </script>";
     } else {
         echo "Error: " . $stmt->error;
@@ -26,5 +26,5 @@ if (isset($_POST['submit'])) {
 }
 
 // Close the database connection
-$conn->close();
+// $conn->close();
 ?>
