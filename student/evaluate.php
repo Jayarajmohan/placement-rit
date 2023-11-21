@@ -43,8 +43,6 @@ foreach ($_POST as $key => $value) {
     }
 }
 
-// Close the database connection
-$conn->close();
 
 // Display the result
 echo "<!DOCTYPE html>";
@@ -95,7 +93,49 @@ echo "<a href='student-dash.php' class='btn btn-secondary float-right'>
 </a>";
 echo "<div class='container'>";
 echo "<h2>Your Score</h2>";
-echo "<p>You answered " . $score . " questions correctly out of " . $_SESSION["question"] . ".</p>";
+echo "<p>You answered " . $score . " questions correctly out of "  . count($_POST) .  ".</p>";
+
+$newScore = $score; // Adjust this according to your input method
+$studentID = $_SESSION['log_id'];
+// // $examname ='aptitude'; // Adjust this according to your input method
+// echo $examname;
+// Check if the student ID exists in the table
+$checkSql = "SELECT * FROM exam_score WHERE id = $studentID AND exam_name='aptitude'";
+$checkResult = $conn->query($checkSql);
+
+if ($checkResult->num_rows > 0) {
+    // Student ID exists, update the existing record
+    $row = $checkResult->fetch_assoc();
+    $highScore = $row['high_score'];
+    $lowestScore = $row['lowest_score'];
+    $countExamAttended = $row['count_exam_attended'];
+
+    if ($newScore > $highScore || $countExamAttended == 0) {
+        $highScore = $newScore;
+    }
+
+    if ($newScore < $lowestScore || $countExamAttended == 0) {
+        $lowestScore = $newScore;
+    }
+
+    $countExamAttended++;
+
+    // Update the database
+    $updateSql = "UPDATE exam_score SET high_score = $highScore, lowest_score = $lowestScore, count_exam_attended = $countExamAttended WHERE id = $studentID AND exam_name='aptitude'";
+    if ($conn->query($updateSql) === TRUE) {
+        echo "Scores updated successfully!";
+    } else {
+        echo "Error updating scores: " . $conn->error;
+    }
+} else {
+    // Student ID doesn't exist, insert a new record
+    $insertSql = "INSERT INTO exam_score (id, high_score, lowest_score, exam_name, count_exam_attended) VALUES ($studentID, $newScore, $newScore, 'aptitude', 1)";
+    if ($conn->query($insertSql) === TRUE) {
+        echo "New record inserted successfully!";
+    } else {
+        echo "Error inserting record: " . $conn->error;
+    }
+}
 
 // Display wrongly answered questions, user's answers, and correct answers
 if (!empty($wronglyAnsweredQuestions)) {

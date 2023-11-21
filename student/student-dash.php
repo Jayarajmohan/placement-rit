@@ -12,6 +12,10 @@ if (!isset($_SESSION['log_id'])) {
     $sql = "SELECT * FROM login_1 WHERE log_id=$id";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
+
+    
+
+
 }
 ?>
 
@@ -45,8 +49,7 @@ if (!isset($_SESSION['log_id'])) {
                     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Profile</a>
                     <div class='dashboard-nav-dropdown-menu'>
-                        <a href="#register" class="dashboard-nav-dropdown-item">Profile Registration</a>
-                        <a href="#" class="dashboard-nav-dropdown-item">Update Profile</a>
+                        <a href="#update" class="dashboard-nav-dropdown-item">Update Profile</a>
                         <a href="#resume" class="dashboard-nav-dropdown-item">Resume Checker</a>
                     </div>
                 </div>
@@ -95,16 +98,8 @@ if (!isset($_SESSION['log_id'])) {
             <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
             <div class='dashboard-content'>
                 <div class='container' id="#home">
-                    <div class='card'>
-                        <div class='card-header'>
-                            <h1>Welcome
-                                <?php echo $row['name']; ?>
-                            </h1>
-                        </div>
-                        <div class='card-body'>
-                            <p>Ydrgdrydrye is: Student</p>
-                        </div>
-                    </div>
+                <?php include_once("profile-details.php"); ?>
+                    
                 </div>
                 <div class='container' id="#register">
                     <?php include_once("profile-reg.html"); ?>
@@ -279,6 +274,10 @@ if (!isset($_SESSION['log_id'])) {
                 <div class='container' id="#resume">
                     <?php include("resume_checker.php") ?>
                 </div>
+                <div class='container' id="#update">
+                    <?php include("update-profile.php") ?>
+                </div>
+                
             </div>
         </div>
     </div>

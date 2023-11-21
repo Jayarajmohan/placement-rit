@@ -64,7 +64,7 @@
                 Enrollment & Payment
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="student-reg.html">Student Register</a></li>
+                <li><a class="dropdown-item" href="profile-reg.html">Student Register</a></li>
                 <li><a class="dropdown-item" href="company-reg.html">Company Register</a></li>
                 <li>
                   <hr class="dropdown-divider">

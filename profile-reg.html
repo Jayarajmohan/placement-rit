@@ -1,0 +1,251 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  form {
+    display: grid;
+    gap: 10px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .file-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .file-upload img {
+    max-width: 150px;
+    max-height: 150px;
+    margin-top: 10px;
+    border-radius: 50%;
+  }
+  button {
+    background-color: #005b96;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .qualification-section {
+    margin-top: 10px;
+  }
+
+  .qualification-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      padding: 10px;
+    }
+  }
+</style>
+
+<h2>Profile Registration Form</h2>
+
+<form action="register_3.php" method="post" enctype="multipart/form-data">
+  <div class="file-upload">
+    <label for="profilePic">Upload Profile Picture:</label>
+    <input type="file" id="profilePic" name="profilePic" accept="image/*" />
+    <img id="previewImage" alt="Preview Image" />
+  </div>
+  <label for="firstName">First Name:</label>
+  <input type="text" id="firstName" name="firstName" required />
+
+  <label for="lastName">Last Name:</label>
+  <input type="text" id="lastName" name="lastName" required />
+
+  <label for="dob">Date of Birth:</label>
+  <input type="date" id="dob" name="dob" required />
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required />
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required />
+
+  <label for="cemail">College Email ID:</label>
+  <input type="email" id="email" name="cemail" required />
+
+  <label for="pemail">Personal Email ID:</label>
+  <input type="email" id="email" name="pemail" required />
+
+  <label for="mobile">Mobile Number:</label>
+  <input type="tel" id="mobile" name="mobile" required />
+
+  <label for="linkedin">LinkedIn:</label>
+  <input type="text" id="linkedin" name="linkedin" />
+
+  <label for="gender">Gender:</label>
+  <select id="gender" name="gender">
+    <option value="" selected disabled>Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+
+  <label for="address">Address:</label>
+  <input type="text" id="address" name="address" />
+
+  <label for="city">City:</label>
+  <input type="text" id="city" name="city" />
+
+  <label for="pinCode">PIN Code:</label>
+  <input type="text" id="pinCode" name="pinCode" />
+
+  <label for="state">State:</label>
+  <input type="text" id="state" name="state" />
+
+  <label for="country">Country:</label>
+  <input type="text" id="country" name="country" />
+
+  <label for="admissionNumber">Admission Number:</label>
+  <input type="number" id="admissionNumber" name="admissionNumber" />
+
+  <label for="department">Department:</label>
+  <select id="department" name="department">
+    <option value="" selected disabled>Select Department</option>
+    <option value="CSE">CSE</option>
+    <option value="EEE">EEE</option>
+    <option value="EC">EC</option>
+    <option value="MECH">MECH</option>
+    <option value="MCA">MCA</option>
+    <option value="MTECH">MTECH</option>
+    <option value="CIVIL">CIVIL</option>
+    <option value="BARCH">BARCH</option>
+  </select>
+
+  <label for="currentSemester">Current Semester:</label>
+  <input type="text" id="currentSemester" name="currentSemester" />
+
+  <!-- Qualification Section -->
+  <div class="qualification-section">
+    <h3>Qualifications:</h3>
+
+    <label for="classXBoard">Class X Board/University:</label>
+    <input type="text" id="classXBoard" name="classXBoard" />
+
+    <label for="classXPercentage">Class X Percentage/CGPA:</label>
+    <input type="text" id="classXPercentage" name="classXPercentage" />
+
+    <label for="classXYear">Class X Year of Passing:</label>
+    <input type="text" id="classXYear" name="classXYear" />
+
+    <label for="classXIIBoard">Class XII Board/University:</label>
+    <input type="text" id="classXIIBoard" name="classXIIBoard" />
+
+    <label for="classXIIPercentage">Class XII Percentage/CGPA:</label>
+    <input type="text" id="classXIIPercentage" name="classXIIPercentage" />
+
+    <label for="classXIIYear">Class XII Year of Passing:</label>
+    <input type="text" id="classXIIYear" name="classXIIYear" />
+
+    <!-- ... (previous fields) ... -->
+
+    <label for="showDiplomaFields">Show Diploma Fields:</label>
+    <input type="checkbox" id="showDiplomaFields" name="showDiplomaFields" />
+    <div id="diplomaFields" style="display: none">
+      <label for="diplomaName">Diploma In:</label>
+      <input type="text" id="diplomaName" name="diplomaName" />
+      <label for="diplomaBoard">Diploma Board/University:</label>
+      <input type="text" id="diplomaBoard" name="diplomaBoard" />
+
+      <label for="diplomaPercentage">Diploma Percentage/CGPA:</label>
+      <input type="text" id="diplomaPercentage" name="diplomaPercentage" />
+
+      <label for="diplomaYear">Diploma Year of Passing:</label>
+      <input type="text" id="diplomaYear" name="diplomaYear" />
+    </div>
+
+    <label for="showGraduationFields">Show Graduation Fields:</label>
+    <input
+      type="checkbox"
+      id="showGraduationFields"
+      name="showGraduationFields"
+    />
+    <div id="graduationFields" style="display: none">
+      <label for="graduationName">Graduation In:</label>
+      <input type="text" id="graduationName" name="graduationName" />
+      <label for="graduationBoard">Graduation Board/University:</label>
+      <input type="text" id="graduationBoard" name="graduationBoard" />
+
+      <label for="graduationPercentage">Graduation Percentage/CGPA:</label>
+      <input
+        type="text"
+        id="graduationPercentage"
+        name="graduationPercentage"
+      />
+
+      <label for="graduationYear">Graduation Year of Passing:</label>
+      <input type="text" id="graduationYear" name="graduationYear" />
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+<script>
+  // Display preview of the uploaded image
+  document
+    .getElementById("profilePic")
+    .addEventListener("change", function (event) {
+      var preview = document.getElementById("previewImage");
+      var file = event.target.files[0];
+      var reader = new FileReader();
+
+      reader.onloadend = function () {
+        preview.src = reader.result;
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = "";
+      }
+    });
+
+  document
+    .getElementById("showDiplomaFields")
+    .addEventListener("change", function () {
+      var diplomaFields = document.getElementById("diplomaFields");
+      diplomaFields.style.display = this.checked ? "block" : "none";
+    });
+
+  document
+    .getElementById("showGraduationFields")
+    .addEventListener("change", function () {
+      var graduationFields = document.getElementById("graduationFields");
+      graduationFields.style.display = this.checked ? "block" : "none";
+    });
+</script>
