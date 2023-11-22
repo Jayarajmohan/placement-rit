@@ -141,7 +141,7 @@
             <li><a class="dropdown-item" href="connect_engage_3.php">Feedbacks</a></li>
             <li><a class="dropdown-item" href="connect_engage_4.php">Contact Us</a></li>
             <li><a class="dropdown-item" href="connect_engage_5.php">About Us</a></li>
-            
+            <li><a class="dropdown-item" href="connect_engage_5.php">Help</a></li>
           </ul>
         </li>
           </ul>

@@ -42,12 +42,14 @@ $personalrow = $personalresult->fetch_assoc();
                             <div class="item-list">highest Score : <?php echo $examrow1['high_score']; ?></div>
                             <div class="item-list">lowest Score : <?php echo $examrow1['lowest_score']; ?></div>
                         </div> -->
-                        <img src="../<?php echo $personalrow['profilePic']; ?>" alt="" srcset=""/>
-                        <?php echo $personalrow['firstName'] . " " .  $personalrow['lastName']; ?>
-                        <?php echo $personalrow['dob']; ?>
-                        <?php echo $personalrow['address']; ?>
-                        <?php echo $personalrow['department']; ?>
-                        <?php echo $personalrow['admissionNumber']; ?>
+                        <img width="200px" src="../<?php echo $personalrow['profilePic']; ?>" alt="" srcset=""/>
+                        <div class="details" style="display:flex;flex-direction:column;">
+                        <p>Name : <?php echo $personalrow['firstName'] . " " .  $personalrow['lastName']; ?></p>
+                        <p>Date of Birth :<?php echo $personalrow['dob']; ?></p>
+                        <p>Address :<?php echo $personalrow['address']; ?></p>
+                        <p>Department :<?php echo $personalrow['department']; ?></p>
+                        <p>Admission number :<?php echo $personalrow['admissionNumber']; ?></p>
+                        </div>
         </div>
     </div>
 </div>

@@ -39,7 +39,7 @@ else if ($checkTransactionStmt->num_rows > 0) {
     // Execute the prepared statement
     if ($stmt->execute()) {
         echo "<script> alert('Payment Completed successfully.');
-        window.location= 'student-reg.html';
+        window.location= 'profile-reg.html';
         </script>";
     } else {
         echo "<script> alert('Payment unsuccessful.');

@@ -180,14 +180,13 @@ form {
     // Check if there are any records
     if ($result->num_rows > 0) {
         echo '<table style="border-collapse: collapse; width:98%; margin: 0 auto; text-align: center;">';
-        echo '<tr style="background-color: #064975; color: #fff;"><th>Name</th><th>Email</th><th>Username</th><th>Status</th></tr>';
+        echo '<tr style="background-color: #064975; color: #fff;"><th>Name</th><th>Email</th><th>Status</th></tr>';
 
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
             echo '<tr style="background-color: #fff;">';
             echo '<td>' . $row['name'] . '</td>';
             echo '<td>' . $row['email'] . '</td>';
-            echo '<td>' . $row['username'] . '</td>';
             if ($row['approved_or_not'] == 0) {
                 // Display a button to approve
                 echo '<td><form method="post"><button type="submit" name="id" value="' . $row['log_id'] . '">Approve</button></form></td>';
@@ -229,14 +228,13 @@ form {
     // Check if there are any records
     if ($result->num_rows > 0) {
         echo '<table style="border-collapse: collapse; width:98%; margin: 0 auto; text-align: center;">';
-        echo '<tr style="background-color: #064975; color: #fff;"><th>Name</th><th>Email</th><th>Username</th><th>Status</th></tr>';
+        echo '<tr style="background-color: #064975; color: #fff;"><th>Name</th><th>Email</th><th>Status</th></tr>';
 
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
             echo '<tr style="background-color: #fff;">';
             echo '<td>' . $row['name'] . '</td>';
             echo '<td>' . $row['email'] . '</td>';
-            echo '<td>' . $row['username'] . '</td>';
             if ($row['approved_or_not'] == 0) {
                 // Display a button to approve
                 echo '<td><form method="post"><button type="submit" name="id" value="' . $row['log_id'] . '">Approve</button></form></td>';

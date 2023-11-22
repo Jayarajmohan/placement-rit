@@ -1,6 +1,7 @@
 <?php
 include_once("./config/connection.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
     $username = $_POST["username"];
     $email = $_POST["email"];
     $mobile = $_POST["mobile"];
@@ -21,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Store User Data in Database (assuming you have a MySQL database set up)
     // Prepare the statement
-    $stmt = $conn->prepare("INSERT INTO login (username, email, password, type) VALUES (?, ?, ?, 1)");
+    $stmt = $conn->prepare("INSERT INTO login (name,username, email, password, type) VALUES (?, ?, ?, 1)");
 
     // Bind parameters and execute
     $stmt->bind_param("sss", $username, $email, $password);

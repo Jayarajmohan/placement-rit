@@ -89,7 +89,7 @@ if (!isset($_SESSION['log_id'])) {
                         <a href="#link-english" class="dashboard-nav-dropdown-item">English</a>
                     </div>
                 </div>
-                <a href="#" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Mock-Interviews</a>
+                <a href="#mock-interview" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Mock-Interviews</a>
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -277,8 +277,11 @@ if (!isset($_SESSION['log_id'])) {
                 <div class='container' id="#update">
                     <?php include("update-profile.php") ?>
                 </div>
-                
+                <div class='container' id="#mock-interview">
+                    <?php include("mock-interview.php")?>
+                </div>
             </div>
+            
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

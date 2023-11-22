@@ -4,7 +4,6 @@ include_once("./config/connection.php");
 
 // Retrieve form data
 $name = $_POST['firstName'];
-$username = $_POST['username'];
 $cemail = $_POST['cemail'];
 $password = $_POST['password'];
 $type = 1;  // Assuming 'type' is a constant value
@@ -92,10 +91,10 @@ if ($checkLoginStmt->num_rows > 0) {
         // Email exists in the 'payments' table, proceed with the registration
 
         // Create a prepared statement for 'login_1' table
-        $stmt = $conn->prepare("INSERT INTO login_1 (name, username, email, password, type, approved_or_not) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO login_1 (name, email, password, type, approved_or_not) VALUES (?, ?, ?, ?, ?)");
 
         // Bind the parameters
-        $stmt->bind_param("ssssii", $name, $username, $cemail, $password, $type, $approved_or_not);
+        $stmt->bind_param("sssii", $name, $cemail, $password, $type, $approved_or_not);
 
         // Execute the prepared statement
         if ($stmt->execute()) {

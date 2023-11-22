@@ -3,12 +3,12 @@ session_start();
 include("./config/connection.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
     // Retrieve the plaintext password, user type, and approval status from the database for the given username
-    $stmt = $conn->prepare('SELECT password, log_id, type, approved_or_not FROM login_1 WHERE username = ?');
-    $stmt->bind_param('s', $username);
+    $stmt = $conn->prepare('SELECT password, log_id, type, approved_or_not FROM login_1 WHERE email = ?');
+    $stmt->bind_param('s', $email);
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                         echo "<script>alert('Login successful!');</script>";
                 }
             } else {
-                echo "<script> alert('Invalid username or password.');
+                echo "<script> alert('Invalid email or password.');
                 window.location= 'login.html';
                 </script>";
             }
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 </script>";
         }
     } else {
-        echo "<script> alert('Invalid username or password.');
+        echo "<script> alert('Invalid email or password.');
                 window.location= 'login.html';
                 </script>";
     }

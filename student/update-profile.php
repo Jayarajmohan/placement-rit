@@ -1,8 +1,4 @@
 <?php
-if (!isset($_SESSION['log_id'])) {
-  header('location:../login.html');
-
-} else {
   include_once("../config/connection.php");
   $id = $_SESSION['log_id'];
 
@@ -11,7 +7,7 @@ if (!isset($_SESSION['log_id'])) {
   $personalresult = $conn->query($personalsql);
   $personalrow = $personalresult->fetch_assoc();
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['update'])) {
     $targetDirectory = "profile_pics/";  // Change this to your desired directory
     $profilePic = $targetDirectory . basename($_FILES["profilePic"]["name"]);
     move_uploaded_file($_FILES["profilePic"]["tmp_name"], $profilePic);
@@ -60,7 +56,7 @@ if ($stmt->execute()) {
 }
   }
 
-}
+
 ?>
 <style>
   body {
@@ -220,7 +216,7 @@ if ($stmt->execute()) {
 
 
 
-  <button type="submit">Update</button>
+  <button type="submit" name="update">Update</button>
 </form>
 <script>
   // Display preview of the uploaded image

@@ -1,251 +1,506 @@
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-
-  h2 {
-    text-align: center;
-    color: #333;
-  }
-
-  form {
-    display: grid;
-    gap: 10px;
-  }
-
-  label {
-    font-weight: bold;
-  }
-
-  input,
-  select {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-  .file-upload {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .file-upload img {
-    max-width: 150px;
-    max-height: 150px;
-    margin-top: 10px;
-    border-radius: 50%;
-  }
-  button {
-    background-color: #005b96;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .qualification-section {
-    margin-top: 10px;
-  }
-
-  .qualification-row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-  }
-
-  @media (max-width: 600px) {
-    .container {
-      padding: 10px;
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      /* margin: 0;
+    padding: 0; */
     }
-  }
-</style>
 
-<h2>Profile Registration Form</h2>
+    .container {
+      max-width: 80%;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-<form action="register_3.php" method="post" enctype="multipart/form-data">
-  <div class="file-upload">
-    <label for="profilePic">Upload Profile Picture:</label>
-    <input type="file" id="profilePic" name="profilePic" accept="image/*" />
-    <img id="previewImage" alt="Preview Image" />
-  </div>
-  <label for="firstName">First Name:</label>
-  <input type="text" id="firstName" name="firstName" required />
+    h2 {
+      text-align: center;
+      color: #333;
+    }
 
-  <label for="lastName">Last Name:</label>
-  <input type="text" id="lastName" name="lastName" required />
+    form {
+      display: grid;
+      gap: 10px;
+    }
 
-  <label for="dob">Date of Birth:</label>
-  <input type="date" id="dob" name="dob" required />
+    label {
+      font-weight: bold;
+    }
 
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username" required />
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .file-upload {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required />
+    .file-upload img {
+      max-width: 150px;
+      max-height: 150px;
+      margin-top: 10px;
+      border-radius: 50%;
+    }
+    button {
+      background-color: #005b96;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-  <label for="cemail">College Email ID:</label>
-  <input type="email" id="email" name="cemail" required />
+    .qualification-section {
+      margin-top: 10px;
+    }
 
-  <label for="pemail">Personal Email ID:</label>
-  <input type="email" id="email" name="pemail" required />
+    .qualification-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
 
-  <label for="mobile">Mobile Number:</label>
-  <input type="tel" id="mobile" name="mobile" required />
-
-  <label for="linkedin">LinkedIn:</label>
-  <input type="text" id="linkedin" name="linkedin" />
-
-  <label for="gender">Gender:</label>
-  <select id="gender" name="gender">
-    <option value="" selected disabled>Select Gender</option>
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-    <option value="other">Other</option>
-  </select>
-
-  <label for="address">Address:</label>
-  <input type="text" id="address" name="address" />
-
-  <label for="city">City:</label>
-  <input type="text" id="city" name="city" />
-
-  <label for="pinCode">PIN Code:</label>
-  <input type="text" id="pinCode" name="pinCode" />
-
-  <label for="state">State:</label>
-  <input type="text" id="state" name="state" />
-
-  <label for="country">Country:</label>
-  <input type="text" id="country" name="country" />
-
-  <label for="admissionNumber">Admission Number:</label>
-  <input type="number" id="admissionNumber" name="admissionNumber" />
-
-  <label for="department">Department:</label>
-  <select id="department" name="department">
-    <option value="" selected disabled>Select Department</option>
-    <option value="CSE">CSE</option>
-    <option value="EEE">EEE</option>
-    <option value="EC">EC</option>
-    <option value="MECH">MECH</option>
-    <option value="MCA">MCA</option>
-    <option value="MTECH">MTECH</option>
-    <option value="CIVIL">CIVIL</option>
-    <option value="BARCH">BARCH</option>
-  </select>
-
-  <label for="currentSemester">Current Semester:</label>
-  <input type="text" id="currentSemester" name="currentSemester" />
-
-  <!-- Qualification Section -->
-  <div class="qualification-section">
-    <h3>Qualifications:</h3>
-
-    <label for="classXBoard">Class X Board/University:</label>
-    <input type="text" id="classXBoard" name="classXBoard" />
-
-    <label for="classXPercentage">Class X Percentage/CGPA:</label>
-    <input type="text" id="classXPercentage" name="classXPercentage" />
-
-    <label for="classXYear">Class X Year of Passing:</label>
-    <input type="text" id="classXYear" name="classXYear" />
-
-    <label for="classXIIBoard">Class XII Board/University:</label>
-    <input type="text" id="classXIIBoard" name="classXIIBoard" />
-
-    <label for="classXIIPercentage">Class XII Percentage/CGPA:</label>
-    <input type="text" id="classXIIPercentage" name="classXIIPercentage" />
-
-    <label for="classXIIYear">Class XII Year of Passing:</label>
-    <input type="text" id="classXIIYear" name="classXIIYear" />
-
-    <!-- ... (previous fields) ... -->
-
-    <label for="showDiplomaFields">Show Diploma Fields:</label>
-    <input type="checkbox" id="showDiplomaFields" name="showDiplomaFields" />
-    <div id="diplomaFields" style="display: none">
-      <label for="diplomaName">Diploma In:</label>
-      <input type="text" id="diplomaName" name="diplomaName" />
-      <label for="diplomaBoard">Diploma Board/University:</label>
-      <input type="text" id="diplomaBoard" name="diplomaBoard" />
-
-      <label for="diplomaPercentage">Diploma Percentage/CGPA:</label>
-      <input type="text" id="diplomaPercentage" name="diplomaPercentage" />
-
-      <label for="diplomaYear">Diploma Year of Passing:</label>
-      <input type="text" id="diplomaYear" name="diplomaYear" />
-    </div>
-
-    <label for="showGraduationFields">Show Graduation Fields:</label>
-    <input
-      type="checkbox"
-      id="showGraduationFields"
-      name="showGraduationFields"
-    />
-    <div id="graduationFields" style="display: none">
-      <label for="graduationName">Graduation In:</label>
-      <input type="text" id="graduationName" name="graduationName" />
-      <label for="graduationBoard">Graduation Board/University:</label>
-      <input type="text" id="graduationBoard" name="graduationBoard" />
-
-      <label for="graduationPercentage">Graduation Percentage/CGPA:</label>
-      <input
-        type="text"
-        id="graduationPercentage"
-        name="graduationPercentage"
-      />
-
-      <label for="graduationYear">Graduation Year of Passing:</label>
-      <input type="text" id="graduationYear" name="graduationYear" />
-    </div>
-  </div>
-
-  <button type="submit">Submit</button>
-</form>
-<script>
-  // Display preview of the uploaded image
-  document
-    .getElementById("profilePic")
-    .addEventListener("change", function (event) {
-      var preview = document.getElementById("previewImage");
-      var file = event.target.files[0];
-      var reader = new FileReader();
-
-      reader.onloadend = function () {
-        preview.src = reader.result;
-      };
-
-      if (file) {
-        reader.readAsDataURL(file);
-      } else {
-        preview.src = "";
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
       }
-    });
+    }
+  </style>
+  <body>
+    <h2>Profile Registration Form</h2>
+    <div class="container">
+      <form action="register_3.php" method="post" enctype="multipart/form-data" id="registrationForm">
+        <div class="file-upload">
+          <label for="profilePic">Upload Profile Picture:</label>
+          <input
+            type="file"
+            id="profilePic"
+            name="profilePic"
+            accept="image/*"
+          />
+          <img id="previewImage" alt="Preview Image" />
+        </div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName"/>
 
-  document
-    .getElementById("showDiplomaFields")
-    .addEventListener("change", function () {
-      var diplomaFields = document.getElementById("diplomaFields");
-      diplomaFields.style.display = this.checked ? "block" : "none";
-    });
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName"/>
 
-  document
-    .getElementById("showGraduationFields")
-    .addEventListener("change", function () {
-      var graduationFields = document.getElementById("graduationFields");
-      graduationFields.style.display = this.checked ? "block" : "none";
-    });
-</script>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"/>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"/>
+
+        <label for="cemail">College Email ID:</label>
+        <input type="email" id="email" name="cemail"/>
+
+        <label for="pemail">Personal Email ID:</label>
+        <input type="email" id="email" name="pemail"/>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile"/>
+
+        <label for="linkedin">LinkedIn:</label>
+        <input type="text" id="linkedin" name="linkedin" />
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+          <option value="" selected disabled>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" />
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" />
+
+        <label for="pinCode">PIN Code:</label>
+        <input type="text" id="pinCode" name="pinCode" />
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" />
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" />
+
+        <label for="admissionNumber">Admission Number:</label>
+        <input type="number" id="admissionNumber" name="admissionNumber" />
+
+        <label for="department">Department:</label>
+        <select id="department" name="department">
+          <option value="" selected disabled>Select Department</option>
+          <option value="CSE">CSE</option>
+          <option value="EEE">EEE</option>
+          <option value="EC">EC</option>
+          <option value="MECH">MECH</option>
+          <option value="MCA">MCA</option>
+          <option value="MTECH">MTECH</option>
+          <option value="CIVIL">CIVIL</option>
+          <option value="BARCH">BARCH</option>
+        </select>
+
+        <label for="currentSemester">Current Semester:</label>
+        <input type="text" id="currentSemester" name="currentSemester" />
+
+        <!-- Qualification Section -->
+        <div class="qualification-section">
+          <h3>Qualifications:</h3>
+
+          <label for="classXBoard">Class X Board/University:</label>
+          <input type="text" id="classXBoard" name="classXBoard" />
+
+          <label for="classXPercentage">Class X Percentage/CGPA:</label>
+          <input type="text" id="classXPercentage" name="classXPercentage" />
+
+          <label for="classXYear">Class X Year of Passing:</label>
+          <input type="text" id="classXYear" name="classXYear" />
+
+          <label for="classXIIBoard">Class XII Board/University:</label>
+          <input type="text" id="classXIIBoard" name="classXIIBoard" />
+
+          <label for="classXIIPercentage">Class XII Percentage/CGPA:</label>
+          <input
+            type="text"
+            id="classXIIPercentage"
+            name="classXIIPercentage"
+          />
+
+          <label for="classXIIYear">Class XII Year of Passing:</label>
+          <input type="text" id="classXIIYear" name="classXIIYear" />
+
+          <!-- ... (previous fields) ... -->
+
+          <label for="showDiplomaFields">Show Diploma Fields:</label>
+          <input
+            type="checkbox"
+            id="showDiplomaFields"
+            name="showDiplomaFields"
+          />
+          <div id="diplomaFields" style="display: none">
+            <label for="diplomaName">Diploma In:</label>
+            <input type="text" id="diplomaName" name="diplomaName" />
+            <label for="diplomaBoard">Diploma Board/University:</label>
+            <input type="text" id="diplomaBoard" name="diplomaBoard" />
+
+            <label for="diplomaPercentage">Diploma Percentage/CGPA:</label>
+            <input
+              type="text"
+              id="diplomaPercentage"
+              name="diplomaPercentage"
+            />
+
+            <label for="diplomaYear">Diploma Year of Passing:</label>
+            <input type="text" id="diplomaYear" name="diplomaYear" />
+          </div>
+
+          <label for="showGraduationFields">Show Graduation Fields:</label>
+          <input
+            type="checkbox"
+            id="showGraduationFields"
+            name="showGraduationFields"
+          />
+          <div id="graduationFields" style="display: none">
+            <label for="graduationName">Graduation In:</label>
+            <input type="text" id="graduationName" name="graduationName" />
+            <label for="graduationBoard">Graduation Board/University:</label>
+            <input type="text" id="graduationBoard" name="graduationBoard" />
+
+            <label for="graduationPercentage"
+              >Graduation Percentage/CGPA:</label
+            >
+            <input
+              type="text"
+              id="graduationPercentage"
+              name="graduationPercentage"
+            />
+
+            <label for="graduationYear">Graduation Year of Passing:</label>
+            <input type="text" id="graduationYear" name="graduationYear" />
+          </div>
+        </div>
+
+        <button type="button"  onclick="validateForm()">Submit</button>
+      </form>
+    </div>
+    <script>
+      // Display preview of the uploaded image
+      document
+        .getElementById("profilePic")
+        .addEventListener("change", function (event) {
+          var preview = document.getElementById("previewImage");
+          var file = event.target.files[0];
+          var reader = new FileReader();
+
+          reader.onloadend = function () {
+            preview.src = reader.result;
+          };
+
+          if (file) {
+            reader.readAsDataURL(file);
+          } else {
+            preview.src = "";
+          }
+        });
+
+      document
+        .getElementById("showDiplomaFields")
+        .addEventListener("change", function () {
+          var diplomaFields = document.getElementById("diplomaFields");
+          diplomaFields.style.display = this.checked ? "block" : "none";
+        });
+
+      document
+        .getElementById("showGraduationFields")
+        .addEventListener("change", function () {
+          var graduationFields = document.getElementById("graduationFields");
+          graduationFields.style.display = this.checked ? "block" : "none";
+        });
+    </script>
+    <script>
+      function validateForm() {
+        var form = document.getElementById("registrationForm");
+
+        // Validate File Upload
+        var profilePic = form.elements["profilePic"];
+        if (profilePic.files.length === 0) {
+          alert("Please upload a profile picture.");
+          return;
+        }
+
+        // Validate First Name
+        var firstName = form.elements["firstName"].value;
+        if (!validateName(firstName)) {
+          alert("Please enter a valid First Name.");
+          return;
+        }
+
+        // Validate Last Name
+        var lastName = form.elements["lastName"].value;
+        if (!validateName(lastName)) {
+          alert("Please enter a valid Last Name.");
+          return;
+        }
+
+        // Validate Date of Birth
+        var dob = form.elements["dob"].value;
+        if (!validateDateOfBirth(dob)) {
+          alert("Please enter a valid Date of Birth.");
+          return;
+        }
+
+        // Validate Password
+        var password = form.elements["password"].value;
+        if (!validatePassword(password)) {
+          alert("Please enter a valid Password.");
+          return;
+        }
+
+        // Validate College Email ID
+        var collegeEmail = form.elements["cemail"].value;
+        if (!validateEmail(collegeEmail)) {
+          alert("Please enter a valid College Email ID.");
+          return;
+        }
+
+        // Validate Personal Email ID
+        var personalEmail = form.elements["pemail"].value;
+        if (!validateEmail(personalEmail)) {
+          alert("Please enter a valid Personal Email ID.");
+          return;
+        }
+
+        // Validate Mobile Number
+        var mobileNumber = form.elements["mobile"].value;
+        if (!validateMobileNumber(mobileNumber)) {
+          alert("Please enter a valid Mobile Number.");
+          return;
+        }
+
+        // Validate LinkedIn
+        var linkedIn = form.elements["linkedin"].value;
+        if (linkedIn.trim() !== "" && !validateLinkedIn(linkedIn)) {
+          alert("Please enter a valid LinkedIn URL.");
+          return;
+        }
+
+        // Validate Gender
+        var gender = form.elements["gender"].value;
+        if (!validateGender(gender)) {
+          alert("Please select a valid Gender.");
+          return;
+        }
+
+        // Validate Address
+        var address = form.elements["address"].value;
+        // Add your custom validation rules for address if needed
+
+        // Validate City
+        var city = form.elements["city"].value;
+        // Add your custom validation rules for city if needed
+
+        // Validate PIN Code
+        var pinCode = form.elements["pinCode"].value;
+        if (!validatePinCode(pinCode)) {
+          alert("Please enter a valid PIN Code.");
+          return;
+        }
+
+        // Validate State
+        var state = form.elements["state"].value;
+        // Add your custom validation rules for state if needed
+
+        // Validate Country
+        var country = form.elements["country"].value;
+        // Add your custom validation rules for country if needed
+
+        // Validate Admission Number
+        var admissionNumber = form.elements["admissionNumber"].value;
+        // Add your custom validation rules for admission number if needed
+
+        // Validate Department
+        var department = form.elements["department"].value;
+        if (!validateDepartment(department)) {
+          alert("Please select a valid Department.");
+          return;
+        }
+
+        // Validate Current Semester
+        var currentSemester = form.elements["currentSemester"].value;
+        // Add your custom validation rules for current semester if needed
+
+        // Validate Qualifications (Class X)
+        var classXBoard = form.elements["classXBoard"].value;
+        // Add your custom validation rules for Class X board if needed
+
+        var classXPercentage = form.elements["classXPercentage"].value;
+        if (!validatePercentage(classXPercentage)) {
+          alert("Please enter a valid percentage/CGPA for Class X.");
+          return;
+        }
+
+        var classXYear = form.elements["classXYear"].value;
+        // Add your custom validation rules for Class X year of passing if needed
+
+        // Validate Qualifications (Class XII)
+        var classXIIBoard = form.elements["classXIIBoard"].value;
+        // Add your custom validation rules for Class XII board if needed
+
+        var classXIIPercentage = form.elements["classXIIPercentage"].value;
+        if (!validatePercentage(classXIIPercentage)) {
+          alert("Please enter a valid percentage/CGPA for Class XII.");
+          return;
+        }
+
+        var classXIIYear = form.elements["classXIIYear"].value;
+        // Add your custom validation rules for Class XII year of passing if needed
+
+        // Check if Diploma fields should be validated
+        var showDiplomaFields = form.elements["showDiplomaFields"].checked;
+        if (showDiplomaFields) {
+          var diplomaName = form.elements["diplomaName"].value;
+          // Add your custom validation rules for diploma name if needed
+
+          var diplomaBoard = form.elements["diplomaBoard"].value;
+          // Add your custom validation rules for diploma board if needed
+
+          var diplomaPercentage = form.elements["diplomaPercentage"].value;
+          if (!validatePercentage(diplomaPercentage)) {
+            alert("Please enter a valid percentage/CGPA for Diploma.");
+            return;
+          }
+
+          var diplomaYear = form.elements["diplomaYear"].value;
+          // Add your custom validation rules for diploma year of passing if needed
+        }
+
+        // Check if Graduation fields should be validated
+        var showGraduationFields =
+          form.elements["showGraduationFields"].checked;
+        if (showGraduationFields) {
+          var graduationName = form.elements["graduationName"].value;
+          // Add your custom validation rules for graduation name if needed
+
+          var graduationBoard = form.elements["graduationBoard"].value;
+          // Add your custom validation rules for graduation board if needed
+
+          var graduationPercentage =
+            form.elements["graduationPercentage"].value;
+          if (!validatePercentage(graduationPercentage)) {
+            alert("Please enter a valid percentage/CGPA for Graduation.");
+            return;
+          }
+
+          var graduationYear = form.elements["graduationYear"].value;
+          // Add your custom validation rules for graduation year of passing if needed
+        }
+
+        // If all validations pass, submit the form
+        form.submit();
+      }
+
+      function validateName(name) {
+        return /^[A-Za-z\s]+$/.test(name);
+      }
+
+      function validateDateOfBirth(dob) {
+        return /\d{4}-\d{2}-\d{2}/.test(dob);
+      }
+
+      function validatePassword(password) {
+        // Add your custom validation rules for password if needed
+        return true;
+      }
+
+      function validateEmail(email) {
+        // Add your custom validation rules for email if needed
+        return /\S+@\S+\.\S+/.test(email);
+      }
+
+      function validateMobileNumber(mobileNumber) {
+        // Add your custom validation rules for mobile number if needed
+        return /^\d{10}$/.test(mobileNumber);
+      }
+
+      function validateLinkedIn(linkedIn) {
+        // Add your custom validation rules for LinkedIn if needed
+        return linkedIn !== "";
+      }
+
+      function validateGender(gender) {
+        // Add your custom validation rules for gender if needed
+        return gender !== "";
+      }
+
+      function validatePinCode(pinCode) {
+        // Add your custom validation rules for PIN code if needed
+        return /^\d{6}$/.test(pinCode);
+      }
+
+      function validateDepartment(department) {
+        return department !== "";
+      }
+
+      function validatePercentage(percentage) {
+        // Add your custom validation rules for percentage/CGPA if needed
+        return true;
+      }
+    </script>
+  </body>
+</html>
