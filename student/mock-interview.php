@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * FROM login";
+$sql = "SELECT * FROM login WHERE type is true";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
@@ -14,9 +14,12 @@ if (isset($_POST['mock_interview'])) {
 
     // Get student_id from session variable (log_id)
     $studentId = $_SESSION['log_id'];
+    $today = date("Y-m-d");
 
+    $sql = "SELECT * FROM mock_interview WHERE student_id=$studentId and status!='rejected' and date > $today";
+$result = $conn->query($sql);
     // Validate the data further if needed
-
+    if($result->num_rows == 0){
     // Insert data into the mock_interview table
     $insertSql = "INSERT INTO mock_interview (student_id, faculty_id, date, status, link) 
                   VALUES (?, ?, ?, ?, ?)";
@@ -34,10 +37,15 @@ if (isset($_POST['mock_interview'])) {
     }
 
     $stmt->close();
+}else{
+    echo "<script> alert('Request Alredy Exsits!');
+    window.location= 'student-dash.php';
+    </script>";
+}
 }
 
 // Fetch faculty data for the dropdown
-$sql = "SELECT * FROM login";
+$sql = "SELECT * FROM login WHERE type is true";
 $result = $conn->query($sql);
 
 // Close the database connection if needed

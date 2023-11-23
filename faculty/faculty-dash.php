@@ -4,14 +4,14 @@ if (!isset($_SESSION['log_id'])) {
     header('location:../login.html');
 
 } else {
-    // include_once("../config/connection.php");
-    // $id = $_SESSION['log_id'];
+    include_once("../config/connection.php");
+    $id = $_SESSION['log_id'];
 
 
-    // // SQL query to retrieve data from the table
-    // $sql = "SELECT * FROM login WHERE id=$id";
-    // $result = $conn->query($sql);
-    // $row = $result->fetch_assoc();
+    // SQL query to retrieve data from the table
+    $sql = "SELECT * FROM login WHERE id=$id";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
 }
 ?>
 
@@ -68,6 +68,7 @@ if (!isset($_SESSION['log_id'])) {
                         <a href="#" class="dashboard-nav-dropdown-item">Delete Metrials</a>
                     </div>
                 </div>
+                <a href="#mock" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Mock-Interviews</a>
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -78,14 +79,15 @@ if (!isset($_SESSION['log_id'])) {
                 <div class='container' id="#home">
                     <div class='card'>
                         <div class='card-header'>
-                            <h1>Welcome
+                            <h1>Welcome <?php echo  $row['name'];?>
 
                             </h1>
                         </div>
                         <div class='card-body'>
-                            <p>Your Account types is: Faculty</p>
                         </div>
+                        <?php include("mock-view.php");?>
                     </div>
+                    
                 </div>
                 
                 <div class='container' id="#questions">
@@ -165,6 +167,9 @@ if (!isset($_SESSION['log_id'])) {
                         <br><br>
                         <input type="submit" value="Upload file" name="submit" class="submit-btn">
                     </form>
+                </div>
+                <div class='container' id="#mock">
+                    <?php include("student-request.php");?>
                 </div>
             </div>
         </div>

@@ -89,7 +89,14 @@ if (!isset($_SESSION['log_id'])) {
                         <a href="#link-english" class="dashboard-nav-dropdown-item">English</a>
                     </div>
                 </div>
-                <a href="#mock-interview" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Mock-Interviews</a>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i>Mock-Interviews</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#mock-interview" class="dashboard-nav-dropdown-item">Send Request</a>
+                        <a href="#response" class="dashboard-nav-dropdown-item">View Response</a>
+                    </div>
+                </div>
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -102,7 +109,7 @@ if (!isset($_SESSION['log_id'])) {
                     
                 </div>
                 <div class='container' id="#register">
-                    <?php include_once("profile-reg.html"); ?>
+                    <?php include_once("update-profile.php"); ?>
                 </div>
                 <div class='container' id="#aptitude">
                     <div class="list-items-1">
@@ -272,13 +279,16 @@ if (!isset($_SESSION['log_id'])) {
                     </div>
                 </div>
                 <div class='container' id="#resume">
-                    <?php include("resume_checker.php") ?>
+                    <?php include("resume_checker.php"); ?>
                 </div>
                 <div class='container' id="#update">
-                    <?php include("update-profile.php") ?>
+                    <?php include("update-profile.php"); ?>
                 </div>
                 <div class='container' id="#mock-interview">
-                    <?php include("mock-interview.php")?>
+                    <?php include("mock-interview.php");?>
+                </div>
+                <div class='container' id="#response">
+                    <?php include("view-response.php");?>
                 </div>
             </div>
             

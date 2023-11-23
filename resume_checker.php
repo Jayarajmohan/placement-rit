@@ -29,7 +29,7 @@
             // Display the result
             // echo "<p>Overall Resume Score: $overallScore</p>";
             echo "<script> alert('Overall Resume Score: $overallScore');
-            window.location= 'student-dash.php';
+            window.location= 'Placement_event_6.php';
             </script>";
 
         } else {
@@ -39,12 +39,7 @@
     ?>
 
     <!-- Form for file upload -->
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" class="upload-form">
-        <label for="resume">Upload Resume:</label>
-        <input type="file" name="resume" id="resume">
-        <br>
-        <input type="submit" value="Submit" class="submit-btn">
-    </form>
+    
 
     <?php
     // Function to calculate the overall score

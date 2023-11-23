@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
     echo "No questions found in the database.";
 }
 
-$conn->close();
+// $conn->close();
 ?>
 
 <!DOCTYPE html>

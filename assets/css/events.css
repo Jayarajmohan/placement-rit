@@ -134,7 +134,67 @@ background: linear-gradient(to right, #ffffff00, #ffffff) !important;
 .inner-banner .header::after{
 background: linear-gradient(to left, #ffffff00, #ffffff) !important;
 }
+.upload-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
+.label {
+    font-weight: bold;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+}
+
+.text-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    padding: 10px;
+    background-color: #005b96;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0278c7;
+}
 @media(max-width: 768px) {
     .conatiner {
         display: flex;

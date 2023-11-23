@@ -87,7 +87,7 @@
           Enrollment & Payment
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="student-reg.html">Student Register</a></li>
+            <li><a class="dropdown-item" href="profile-reg.html">Student Register</a></li>
             <li><a class="dropdown-item" href="company-reg.html">Company Register</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Payments</a></li>
@@ -108,6 +108,8 @@
             <li><a class="dropdown-item" href="Placement_event_2.php">Recruiters</a></li>
             <li><a class="dropdown-item" href="Placement_event_3.php">Upcomming CGPA Sessions</a></li>
             <li><a class="dropdown-item" href="Placement_event_4.php">Internships</a></li>
+            <li><a class="dropdown-item" href="Placement_event_6.php">Resume Score</a></li>
+            
             <li><a class="dropdown-item" href="Placement_event_5.php">Placement Recoreds</a></li>
             
           </ul>
@@ -141,7 +143,8 @@
             <li><a class="dropdown-item" href="connect_engage_3.php">Feedbacks</a></li>
             <li><a class="dropdown-item" href="connect_engage_4.php">Contact Us</a></li>
             <li><a class="dropdown-item" href="connect_engage_5.php">About Us</a></li>
-            <li><a class="dropdown-item" href="connect_engage_5.php">Help</a></li>
+            <li><a class="dropdown-item" href="connect_engage_6.php">Help</a></li>
+            
           </ul>
         </li>
           </ul>
