@@ -99,7 +99,7 @@
         echo "<p>No data found in the table.</p>";
     }
     ?>
-    <div class="container-fluid image-container">
+    <div class="container-fluid image-container1">
       <div class="icon"><img src="./assets/images/homeicon.png" alt="" srcset=""></div>
       <div class="text">Career Guidance and Placement Cell serves as a center that facilitates and inspires students for achieving employment, higher education and entrepreneurial aspiration.</div>
   </div>

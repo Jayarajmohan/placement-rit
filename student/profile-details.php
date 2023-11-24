@@ -22,6 +22,7 @@ $personalresult = $conn->query($personalsql);
 $personalrow = $personalresult->fetch_assoc();
 
 
+
 ?>
 
 <div class='card'>
@@ -32,24 +33,59 @@ $personalrow = $personalresult->fetch_assoc();
     </div>
     <div class='card-body'>
         <div class="exam-card" style="display:flex;justify-content:space-evenly;">
-            <!-- <div class="item">
-                            <div class="item-list">Total Aptitude Attended: <?php echo $examrow['count_exam_attended']; ?></div>
-                            <div class="item-list">highest Score : <?php echo $examrow['high_score']; ?></div>
-                            <div class="item-list">lowest Score : <?php echo $examrow['lowest_score']; ?></div>
-                        </div>
-                        <div class="item">
-                            <div class="item-list">Total English Attended: <?php echo $examrow1['count_exam_attended']; ?></div>
-                            <div class="item-list">highest Score : <?php echo $examrow1['high_score']; ?></div>
-                            <div class="item-list">lowest Score : <?php echo $examrow1['lowest_score']; ?></div>
-                        </div> -->
-                        <img width="200px" src="../<?php echo $personalrow['profilePic']; ?>" alt="" srcset=""/>
-                        <div class="details" style="display:flex;flex-direction:column;">
-                        <p>Name : <?php echo $personalrow['firstName'] . " " .  $personalrow['lastName']; ?></p>
-                        <p>Date of Birth :<?php echo $personalrow['dob']; ?></p>
-                        <p>Address :<?php echo $personalrow['address']; ?></p>
-                        <p>Department :<?php echo $personalrow['department']; ?></p>
-                        <p>Admission number :<?php echo $personalrow['admissionNumber']; ?></p>
-                        </div>
+
+            <img width="200px" src="../<?php echo $personalrow['profilePic']; ?>" alt="" srcset="" />
+            <div class="details" style="display:flex;flex-direction:column;">
+                <p>Name :
+                    <?php echo $personalrow['firstName'] . " " . $personalrow['lastName']; ?>
+                </p>
+                <p>Date of Birth :
+                    <?php echo $personalrow['dob']; ?>
+                </p>
+                <p>Address :
+                    <?php echo $personalrow['address']; ?>
+                </p>
+                <p>Department :
+                    <?php echo $personalrow['department']; ?>
+                </p>
+                <p>Admission number :
+                    <?php echo $personalrow['admissionNumber']; ?>
+                </p>
+            </div>
         </div>
+        <?php include_once("view-placements.php"); ?>
+        <div style="display: flex; justify-content: space-between; margin: 10px">
+            <div class="item">
+                <?php if ($examrow['count_exam_attended'] > 0) { ?>
+                    <div class="item-list">Total Aptitude Attended:
+                        <?php echo $examrow['count_exam_attended']; ?>
+                    </div>
+                    <div class="item-list">Highest Score:
+                        <?php echo $examrow['high_score']; ?>
+                    </div>
+                    <div class="item-list">Lowest Score:
+                        <?php echo $examrow['lowest_score']; ?>
+                    </div>
+                <?php } else { ?>
+                    <div class="item-list">No records found for Aptitude</div>
+                <?php } ?>
+            </div>
+            <div class="item">
+                <?php if ($examrow1['count_exam_attended'] > 0) { ?>
+                    <div class="item-list">Total English Attended:
+                        <?php echo $examrow1['count_exam_attended']; ?>
+                    </div>
+                    <div class="item-list">Highest Score:
+                        <?php echo $examrow1['high_score']; ?>
+                    </div>
+                    <div class="item-list">Lowest Score:
+                        <?php echo $examrow1['lowest_score']; ?>
+                    </div>
+                <?php } else { ?>
+                    <div class="item-list">No records found for English</div>
+                <?php } ?>
+            </div>
+        </div>
+
     </div>
 </div>

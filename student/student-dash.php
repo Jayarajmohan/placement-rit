@@ -50,7 +50,6 @@ if (!isset($_SESSION['log_id'])) {
                         <i class="fas fa-photo-video"></i>Profile</a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="#update" class="dashboard-nav-dropdown-item">Update Profile</a>
-                        <a href="#resume" class="dashboard-nav-dropdown-item">Resume Checker</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
@@ -91,12 +90,22 @@ if (!isset($_SESSION['log_id'])) {
                 </div>
                 <div class='dashboard-nav-dropdown'>
                     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i>My placements</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#add-place" class="dashboard-nav-dropdown-item">Add Placement</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">View Response</a>
+                    </div>
+                </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Mock-Interviews</a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="#mock-interview" class="dashboard-nav-dropdown-item">Send Request</a>
                         <a href="#response" class="dashboard-nav-dropdown-item">View Response</a>
                     </div>
                 </div>
+                
+                
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -286,6 +295,9 @@ if (!isset($_SESSION['log_id'])) {
                 </div>
                 <div class='container' id="#mock-interview">
                     <?php include("mock-interview.php");?>
+                </div>
+                <div class='container' id="#add-place">
+                    <?php include("add-placments.php");?>
                 </div>
                 <div class='container' id="#response">
                     <?php include("view-response.php");?>
