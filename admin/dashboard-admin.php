@@ -114,7 +114,7 @@ if (!isset($_SESSION['log_id'])) {
             <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
             <div class='dashboard-content'>
                 <div class='container' id="#home">
-                    <?php include('user-info.php'); ?>
+                    <?php include_once('user-info.php'); ?>
                 </div>
                 <div class='container' id="#add-image">
                     <form action="image-add.php" method="post" enctype="multipart/form-data" class="upload-form">
@@ -271,23 +271,7 @@ if (!isset($_SESSION['log_id'])) {
                     ?>
                 </div>
                 <div class='container' id="#Add-faculty">
-                    <form action="register_1.php" method="post" class="upload-form">
-                        <div class="form-group">
-                            <label for="username" class="label">Username</label>
-                            <input type="text" name="username" id="username" class="text-input" placeholder="Username"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="label">Email</label>
-                            <input type="email" name="email" id="email" class="text-input" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="label">Password</label>
-                            <input type="password" name="password" id="password" class="text-input"
-                                placeholder="Password" required>
-                        </div>
-                        <button type="submit" class="submit-btn">Register</button>
-                    </form>
+                    <?php include_once("./faculty_registration.html");?>
                 </div>
                 <div class='container' id="#Add-stati">
                     <?php

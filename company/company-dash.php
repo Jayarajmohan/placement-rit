@@ -50,6 +50,15 @@ if (!isset($_SESSION['log_id'])) {
                         <a href="#" class="dashboard-nav-dropdown-item">Video</a>
                     </div>
                 </div>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i>Study-Metrials</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#Meterials" class="dashboard-nav-dropdown-item">Add Metrials</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Update Metrials</a>
+                        <a href="#" class="dashboard-nav-dropdown-item">Delete Metrials</a>
+                    </div>
+                </div>
                 <!-- <div class='dashboard-nav-dropdown'><a href="#!"
                         class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Users </a>
                     <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
@@ -90,6 +99,26 @@ if (!isset($_SESSION['log_id'])) {
                         <label for="link">Link:</label>
                         <input type="url" id="link" name="link" required>
                         <input type="submit" value="Submit" name="submit" class="submit-btn">
+                    </form>
+                </div>
+                <div class='container' id="#Meterials">
+                    <form action="add-meterials.php" method="post" enctype="multipart/form-data" class="upload-form">
+                        <label for="file">Select file to upload:</label>
+                        <input type="file" name="file" id="file">
+
+                        <label for="file_name">File name :</label>
+                        <input type="text" name="file_name" id="file_name">
+
+                        <label for="type">Type:</label>
+                        <select name="type" class="select">
+                            <option value="" selected>Select the Type</option>
+                            <option value="Aptitude">Aptitude</option>
+                            <option value="Coding">Coding</option>
+                            <option value="English">English</option>
+                        </select>
+
+                        <br><br>
+                        <input type="submit" value="Upload file" name="submit1" class="submit-btn">
                     </form>
                 </div>
             </div>

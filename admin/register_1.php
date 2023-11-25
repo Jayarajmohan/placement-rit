@@ -1,14 +1,17 @@
 <?php
-include_once("./config/connection.php");
+include_once("../config/connection.php");
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $username = $_POST["username"];
     $email = $_POST["email"];
-    $mobile = $_POST["mobile"];
     $password = $_POST["password"];
-    $unique_code = $_POST["unique_code"];
-
-
 
     // Validate Email Format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL) || !preg_match('/@rit\.ac\.in$/', $email)) {
@@ -20,26 +23,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Invalid Password");
     }
 
-    // Store User Data in Database (assuming you have a MySQL database set up)
-    // Prepare the statement
-    $stmt = $conn->prepare("INSERT INTO login (name,username, email, password, type) VALUES (?, ?, ?, 1)");
-
-    // Bind parameters and execute
-    $stmt->bind_param("sss", $username, $email, $password);
+    // Store User Data in Database
+    $stmt = $conn->prepare("INSERT INTO login (name, username, email, password, type) VALUES (?, ?, ?, ?, 1)");
+    $stmt->bind_param("ssss", $name, $username, $email, $password);
     $stmt->execute();
 
-    // Check for success
     if ($stmt->affected_rows === 1) {
-        // echo "Registration successful!";
-        echo "<script> alert('Registration successful');
+        // Registration successful
+        echo "<script> alert('Registration successful. Sending email...');
         window.location= 'dashboard-admin.php';
         </script>";
+
+        // Send Email with Username and Password
+        $mail = new PHPMailer(true);
+        try {
+            //Server settings
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';  // Specify the SMTP server
+            $mail->SMTPAuth   = true;               // Enable SMTP authentication
+            $mail->Username   = 'jayarajmotif@gmail.com'; // Replace with your Gmail email
+            $mail->Password   = 'nffz rlkb cuqy gnrj'; // Replace with your Gmail password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            $mail->setFrom('jayarajmotif@gmail.com', 'Jayaraj');
+            $mail->addAddress($email);      // Add a recipient
+
+            // Content
+            $mail->isHTML(true);
+            $mail->Subject = 'Your Registration Details';
+            $mail->Body    = "Hello $name,<br><br>Your username: $username<br>Your password: $password";
+
+            $mail->send();
+            // echo "<script> alert('Email sent successfully.');
+            // </script>";
+            echo "<script> alert('Registration successful. Email sent successfully.');
+        window.location= 'dashboard-admin.php';
+        </script>";
+        } catch (Exception $e) {
+            echo "Error sending email: {$mail->ErrorInfo}";
+        }
     } else {
         echo "Error: " . $stmt->error;
     }
 
-    // Close the statement and connection
     $stmt->close();
-    // $conn->close();
 }
 ?>

@@ -34,10 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                     echo "<script>alert('Login successful!');</script>";
             }
         } else {
-            echo "<script>alert('Invalid username or password1');</script>";
+            // echo "<script>alert('Invalid username or password1');</script>";
+            echo "<script> alert('Invalid username or password1');
+        window.location= 'login.html';
+        </script>";
         }
     } else {
-        echo "<script>alert('Invalid username or password2');</script>";
+        // echo "<script>alert('Invalid username or password');</script>";
+        echo "<script> alert('Invalid username or password');
+        window.location= 'login.html';
+        </script>";
     }
 }
 ?>

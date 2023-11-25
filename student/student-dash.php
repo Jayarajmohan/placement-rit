@@ -49,7 +49,7 @@ if (!isset($_SESSION['log_id'])) {
                     <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
                         <i class="fas fa-photo-video"></i>Profile</a>
                     <div class='dashboard-nav-dropdown-menu'>
-                        <a href="#update" class="dashboard-nav-dropdown-item">Update Profile</a>
+                        <a href="#register" class="dashboard-nav-dropdown-item">Update Profile</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
@@ -93,7 +93,6 @@ if (!isset($_SESSION['log_id'])) {
                         <i class="fas fa-photo-video"></i>My placements</a>
                     <div class='dashboard-nav-dropdown-menu'>
                         <a href="#add-place" class="dashboard-nav-dropdown-item">Add Placement</a>
-                        <a href="#" class="dashboard-nav-dropdown-item">View Response</a>
                     </div>
                 </div>
                 <div class='dashboard-nav-dropdown'>
@@ -104,8 +103,15 @@ if (!isset($_SESSION['log_id'])) {
                         <a href="#response" class="dashboard-nav-dropdown-item">View Response</a>
                     </div>
                 </div>
-                
-                
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fas fa-photo-video"></i>No dues</a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#nodues" class="dashboard-nav-dropdown-item">Send Request</a>
+                        <a href="#view" class="dashboard-nav-dropdown-item">View Response</a>
+                    </div>
+                </div>
+               
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -287,21 +293,24 @@ if (!isset($_SESSION['log_id'])) {
                         </div>
                     </div>
                 </div>
-                <div class='container' id="#resume">
-                    <?php include("resume_checker.php"); ?>
-                </div>
-                <div class='container' id="#update">
-                    <?php include("update-profile.php"); ?>
+                
+                <div class='container' id="#add-place">
+                    <?php include_once("add-placments.php");?>
                 </div>
                 <div class='container' id="#mock-interview">
-                    <?php include("mock-interview.php");?>
-                </div>
-                <div class='container' id="#add-place">
-                    <?php include("add-placments.php");?>
+                    <?php include_once("mock-interview.php");?>
                 </div>
                 <div class='container' id="#response">
-                    <?php include("view-response.php");?>
+                    <?php include_once("view-response.php");?>
+                </div>  
+                <div class='container' id="#nodues">
+                    <?php include_once("nodues.php");?>
+                    
                 </div>
+                <div class='container' id="#view">
+                <?php include_once("nodues-response.php");?>
+                </div>
+                   
             </div>
             
         </div>
