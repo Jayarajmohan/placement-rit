@@ -9,6 +9,29 @@
     <link rel="stylesheet" href="./assets/css/style.css?v=<?php echo time(); ?>">
     <title></title>
 </head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #b3e0ff; /* Light Blue Background for Header */
+        color: #333; /* Black Text Color for Header */
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* White Background for Even Rows */
+    }
+</style>
+
 <body>
 
 <?php include_once("header.php") ?>
@@ -24,6 +47,45 @@
       </div>
       </section>
 <div class="container">
+<?php
+include_once("./config/connection.php");
+
+// SQL query to join the two tables
+$sql = "SELECT s.firstName, s.lastName, s.department, s.currentSemester, p.company, p.salary, p.level
+        FROM student_profile s
+        JOIN placement_details p ON s.id = p.student_id";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo '<table border="1">
+            <tr>
+                <th>Student Name</th>
+                <th>Department</th>
+                <th>Semester</th>
+                <th>Company</th>
+                <th>Salary</th>
+                <th>Level</th>
+            </tr>';
+
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>
+                <td>' . $row['firstName'] . ' ' . $row['lastName'] . '</td>
+                <td>' . $row['department'] . '</td>
+                <td>' . $row['currentSemester'] . '</td>
+                <td>' . $row['company'] . '</td>
+                <td>' . $row['salary'] . '</td>
+                <td>' . $row['level'] . '</td>
+            </tr>';
+    }
+
+    echo '</table>';
+} else {
+    echo "No records found.";
+}
+
+$conn->close();
+?>
 
        
     </div>

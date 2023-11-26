@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <title>Document</title>
   </head>
   <style>
@@ -80,7 +81,13 @@
     }
   </style>
   <body>
-    <h2>Profile Registration Form</h2>
+    <div class="card-header">
+      <h2>Student Registration Form</h2>
+      <a href="index.php" class="btn btn-secondary float-right">
+          <i class="fa fa-arrow-left"></i> Back
+      </a>
+  </div>
+    
     <div class="container">
       <form action="register_3.php" method="post" enctype="multipart/form-data" id="registrationForm">
         <div class="file-upload">
@@ -502,5 +509,6 @@
         return true;
       }
     </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>
 </html>
