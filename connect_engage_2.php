@@ -114,6 +114,15 @@
             </div>
         
     </div>
+    <div class="container-fluid image-container1">
+      <div class="icon"><img src="./assets/images/homeicon.png" alt="" srcset=""></div>
+      <div class="text">Career Guidance and Placement Cell serves as a center that facilitates and inspires students for achieving employment, higher education and entrepreneurial aspiration.</div>
+  </div>
+<footer>
+    <div class="footer-bottom">
+      <p>©2021 ALL RIGHTS RESERVED - RIT KOTTYAM</p>
+    </div>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

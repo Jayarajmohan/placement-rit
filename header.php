@@ -90,7 +90,7 @@
             <li><a class="dropdown-item" href="profile-reg.html">Student Register</a></li>
             <li><a class="dropdown-item" href="company-reg.html">Company Register</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Payments</a></li>
+            <li><a class="dropdown-item" href="payments.html">Payments</a></li>
           </ul>
         </li>
             <li class="nav-item mx-2">

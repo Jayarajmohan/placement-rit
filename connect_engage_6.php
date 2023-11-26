@@ -23,7 +23,7 @@
         </div>
       </div>
       </section>
-<main>
+<main style="margin-bottom:20px;">
         <section class="tab__container">
             <div class="tab__title">
                 <button class="tab__button tab_button-active" onclick="openTab('one')"><img
@@ -119,6 +119,15 @@
             <!---- End tab ---->
         </section>
     </main>
+    <div class="container-fluid image-container1" style="margin-top:100px;">
+      <div class="icon"><img src="./assets/images/homeicon.png" alt="" srcset=""></div>
+      <div class="text">Career Guidance and Placement Cell serves as a center that facilitates and inspires students for achieving employment, higher education and entrepreneurial aspiration.</div>
+  </div>
+<footer>
+    <div class="footer-bottom">
+      <p>©2021 ALL RIGHTS RESERVED - RIT KOTTYAM</p>
+    </div>
+  </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         function openTab(tabNumber) {
@@ -133,6 +142,7 @@
             $('#' + tabNumber).addClass('tab__inside-active');
         }
     </script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
