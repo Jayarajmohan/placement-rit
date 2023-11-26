@@ -106,6 +106,7 @@ if (!isset($_SESSION['log_id'])) {
                 </div>
                 <a href="#Add-faculty" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Add faculty</a>
                 <a href="#Add-stati" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>Add Statatics</a>
+                <a href="#no_dues" class="dashboard-nav-item"><i class="fas fa-file-upload"></i>No_dues Requests</a>
                 <div class="nav-item-divider"></div>
                 <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
             </nav>
@@ -296,6 +297,11 @@ if (!isset($_SESSION['log_id'])) {
                         <br><br>
                         <input type="submit" value="Add Internship" name="submit" class="submit-btn">
                     </form>
+                </div>
+                <div class='container' id="#no_dues">
+                    <?php
+                    include_once("./no_dues_view.php");
+                    ?>
                 </div>
 
             </div>

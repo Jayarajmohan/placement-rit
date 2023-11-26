@@ -293,7 +293,13 @@ if (!isset($_SESSION['log_id'])) {
                         </div>
                     </div>
                 </div>
-                
+                <div class='container' id="#nodues">
+                    <?php include_once("nodues.php");?>
+                    
+                </div>
+                <div class='container' id="#view">
+                <?php include_once("nodues-response.php");?>
+                </div>
                 <div class='container' id="#add-place">
                     <?php include_once("add-placments.php");?>
                 </div>
@@ -302,15 +308,7 @@ if (!isset($_SESSION['log_id'])) {
                 </div>
                 <div class='container' id="#response">
                     <?php include_once("view-response.php");?>
-                </div>  
-                <div class='container' id="#nodues">
-                    <?php include_once("nodues.php");?>
-                    
-                </div>
-                <div class='container' id="#view">
-                <?php include_once("nodues-response.php");?>
-                </div>
-                   
+                </div>         
             </div>
             
         </div>

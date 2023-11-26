@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
 }
 
 // Close the statement
-$stmt->close();
+// $stmt->close();
 
 // Close the database connection if needed
 // $conn->close();
